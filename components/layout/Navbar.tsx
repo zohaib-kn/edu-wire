@@ -85,12 +85,13 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-slate-100 shadow-[0_4px_30px_rgba(0,0,0,0.03)]"
-          : "bg-white border-transparent"
+          ? "bg-white/95 backdrop-blur-md border-slate-200/80 shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
+          : "bg-white border-slate-100"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between gap-4">
+        {/* ── Desktop bar: xl and above ── */}
+        <div className="hidden xl:flex h-[72px] items-center justify-between gap-3">
           
           {/* Brand Logo */}
           <div className="flex-shrink-0">
@@ -98,16 +99,16 @@ export default function Navbar() {
               <Image
                 src="/images/Edu-wire-log.png"
                 alt="Edu-Wire Logo"
-                width={190}
-                height={45}
+                width={180}
+                height={42}
                 priority
-                className="h-10.5 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </Link>
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
+          <nav className="flex items-center gap-0.5">
             {siteConfig.navigation.main.map((item) => {
               const isActiveParent = pathname.startsWith(item.href);
 
@@ -121,7 +122,7 @@ export default function Navbar() {
                     onMouseLeave={closeOnHover}
                   >
                     <button
-                      className={`relative flex items-center gap-1 rounded-xl px-4 py-2.5 text-sm font-bold transition-all duration-200 outline-none select-none ${
+                      className={`relative flex items-center gap-1 rounded-lg px-3 py-2 text-[13.5px] font-semibold transition-all duration-200 outline-none select-none ${
                         isActiveParent
                           ? "text-[#0D6493] bg-[#0D6493]/5"
                           : "text-slate-600 hover:text-[#0D6493] hover:bg-slate-50"
@@ -129,7 +130,7 @@ export default function Navbar() {
                     >
                       <span>{item.name}</span>
                       <ChevronDown
-                        className={`h-4 w-4 opacity-70 transition-transform duration-300 ${
+                        className={`h-3.5 w-3.5 opacity-60 transition-transform duration-300 ${
                           activeDropdown === item.name ? "rotate-180" : ""
                         }`}
                       />
@@ -137,10 +138,10 @@ export default function Navbar() {
 
                     {/* Dropdown Menu */}
                     <div
-                      className={`absolute top-full transition-all duration-200 pt-2.5 z-50 ${
+                      className={`absolute top-full transition-all duration-200 pt-2 z-50 ${
                         isLargeDropdown
                           ? "left-1/2 -translate-x-1/2 w-[460px]"
-                          : "left-0 w-64"
+                          : "left-0 w-56"
                       } ${
                         activeDropdown === item.name
                           ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -148,7 +149,7 @@ export default function Navbar() {
                       }`}
                     >
                       <div
-                        className={`bg-white rounded-2xl shadow-xl shadow-slate-900/8 border border-slate-100 p-3 ${
+                        className={`bg-white rounded-xl shadow-xl shadow-slate-900/8 border border-slate-100 p-2.5 ${
                           isLargeDropdown
                             ? "grid grid-cols-2 gap-1"
                             : "flex flex-col gap-0.5"
@@ -161,14 +162,14 @@ export default function Navbar() {
                             <Link
                               key={subItem.name}
                               href={subItem.href}
-                              className={`group flex items-center rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-all duration-150 ${
+                              className={`group flex items-center rounded-lg px-3 py-2 text-[13px] font-semibold transition-all duration-150 ${
                                 isActiveChild
                                   ? "bg-[#0D6493]/6 text-[#0D6493]"
                                   : "text-slate-600 hover:bg-slate-50 hover:text-[#0D6493]"
                               }`}
                             >
                               {flagEmoji && (
-                                <span className="mr-2 text-base shrink-0 select-none">
+                                <span className="mr-2 text-sm shrink-0 select-none">
                                   {flagEmoji}
                                 </span>
                               )}
@@ -187,7 +188,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`relative rounded-xl px-4 py-2.5 text-sm font-bold transition-all duration-200 ${
+                  className={`relative rounded-lg px-3 py-2 text-[13.5px] font-semibold transition-all duration-200 ${
                     isActive
                       ? "text-[#0D6493] bg-[#0D6493]/5"
                       : "text-slate-600 hover:text-[#0D6493] hover:bg-slate-50"
@@ -200,54 +201,68 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="flex items-center gap-2.5 flex-shrink-0">
             <a
               href={`tel:${siteConfig.contact.phones[0].replace(/\s+/g, "")}`}
-              className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-600 transition-all duration-200 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 shadow-xs"
+              className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-[13px] font-semibold text-slate-600 transition-all duration-200 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 whitespace-nowrap"
             >
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0D6493]/10 text-[#0D6493]">
-                <Phone className="h-3 w-3" />
+              <span className="flex h-[18px] w-[18px] items-center justify-center rounded-full bg-[#0D6493]/10 text-[#0D6493] flex-shrink-0">
+                <Phone className="h-2.5 w-2.5" />
               </span>
               <span>{siteConfig.contact.phones[0]}</span>
             </a>
             <button
               onClick={openModal}
-              className="rounded-xl bg-[#0D6493] px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0D6493]/15 transition-all duration-200 hover:bg-[#0b5577] hover:shadow-lg hover:shadow-[#0D6493]/25 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="rounded-lg bg-[#0D6493] px-5 py-2 text-[13px] font-bold text-white shadow-sm shadow-[#0D6493]/20 transition-all duration-200 hover:bg-[#0b5577] hover:shadow-md hover:shadow-[#0D6493]/25 hover:-translate-y-px active:translate-y-0 cursor-pointer whitespace-nowrap"
             >
               Free Counselling
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex lg:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isOpen}
-              className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700 focus:outline-none"
-            >
-              <Menu
-                className={`absolute h-6 w-6 transition-all duration-200 ${
-                  isOpen ? "opacity-0 rotate-45 scale-75" : "opacity-100 rotate-0 scale-100"
-                }`}
-              />
-              <X
-                className={`absolute h-6 w-6 transition-all duration-200 ${
-                  isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-45 scale-75"
-                }`}
-              />
-            </button>
-          </div>
+        </div>
+
+        {/* ── Mobile / Tablet bar: below xl ── */}
+        <div className="flex xl:hidden h-[64px] items-center justify-between">
+          {/* Brand Logo */}
+          <Link href="/" className="flex items-center group flex-shrink-0">
+            <Image
+              src="/images/Edu-wire-log.png"
+              alt="Edu-Wire Logo"
+              width={160}
+              height={38}
+              priority
+              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </Link>
+
+          {/* Hamburger toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            className="relative inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700 focus:outline-none"
+          >
+            <Menu
+              className={`absolute h-5 w-5 transition-all duration-200 ${
+                isOpen ? "opacity-0 rotate-45 scale-75" : "opacity-100 rotate-0 scale-100"
+              }`}
+            />
+            <X
+              className={`absolute h-5 w-5 transition-all duration-200 ${
+                isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-45 scale-75"
+              }`}
+            />
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu Panel */}
       <div
-        className={`lg:hidden overflow-hidden border-t border-slate-100 bg-white transition-[max-height,opacity] duration-300 ease-in-out ${
-          isOpen ? "max-h-[calc(100vh-5rem)] opacity-100" : "max-h-0 opacity-0"
+        className={`xl:hidden overflow-hidden border-t border-slate-100 bg-white transition-[max-height,opacity] duration-300 ease-in-out ${
+          isOpen ? "max-h-[calc(100vh-4rem)] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="space-y-1.5 px-4 py-5 max-h-[calc(100vh-6rem)] overflow-y-auto">
+        <div className="space-y-1 px-4 py-4 max-h-[calc(100vh-5rem)] overflow-y-auto">
           {siteConfig.navigation.main.map((item) => {
             if (item.children) {
               const isActiveParent = pathname.startsWith(item.href);
@@ -320,13 +335,13 @@ export default function Navbar() {
           })}
 
           {/* Mobile bottom contacts/actions */}
-          <div className="mt-6 pt-6 border-t border-slate-100 flex flex-col gap-3">
+          <div className="mt-5 pt-5 border-t border-slate-100 flex flex-col gap-3">
             <a
               href={`tel:${siteConfig.contact.phones[0].replace(/\s+/g, "")}`}
-              className="flex items-center gap-3.5 rounded-xl border border-slate-200 px-4 py-3.5 text-base font-bold text-slate-700 hover:bg-slate-50 transition-colors shadow-xs"
+              className="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 text-base font-bold text-slate-700 hover:bg-slate-50 transition-colors"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0D6493]/10 text-[#0D6493]">
-                <Phone className="h-4.5 w-4.5" />
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0D6493]/10 text-[#0D6493] flex-shrink-0">
+                <Phone className="h-4 w-4" />
               </span>
               <span>Call Us: {siteConfig.contact.phones[0]}</span>
             </a>
@@ -335,7 +350,7 @@ export default function Navbar() {
                 setIsOpen(false);
                 openModal();
               }}
-              className="w-full rounded-xl bg-[#0D6493] py-4 text-center text-base font-bold text-white shadow-md shadow-[#0D6493]/20 hover:bg-[#0b5577] transition-all cursor-pointer"
+              className="w-full rounded-xl bg-[#0D6493] py-3.5 text-center text-base font-bold text-white shadow-md shadow-[#0D6493]/20 hover:bg-[#0b5577] transition-all cursor-pointer"
             >
               Book Free Counselling
             </button>

@@ -251,7 +251,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════
           1. HERO
       ══════════════════════════════════════ */}
-      <section className="relative bg-white overflow-hidden py-20 lg:py-28">
+      <section className="relative bg-white overflow-hidden py-10 lg:py-16">
         {/* Subtle grid background */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
