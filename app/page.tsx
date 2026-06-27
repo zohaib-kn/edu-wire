@@ -13,21 +13,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
   Globe,
-  Award,
   Users,
-  Compass,
   ArrowRight,
   BookOpen,
   CheckCircle,
   FileText,
-  Star,
-  TrendingUp,
   ChevronLeft,
   ChevronRight,
   Phone,
   Mail,
   MapPin,
-  Sparkles,
   Building2,
   Clock,
 } from "lucide-react";
@@ -251,25 +246,17 @@ export default function HomePage() {
       {/* ══════════════════════════════════════
           1. HERO
       ══════════════════════════════════════ */}
-      <section className="relative bg-white overflow-hidden py-10 lg:py-16">
-        {/* Subtle grid background */}
-        <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage: `linear-gradient(#0D6493 1px, transparent 1px), linear-gradient(90deg, #0D6493 1px, transparent 1px)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
-        {/* Colour wash — top-right */}
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[#0D6493]/6 blur-3xl pointer-events-none" />
-        {/* Colour wash — bottom-left */}
-        <div className="absolute -bottom-20 -left-20 w-[340px] h-[340px] rounded-full bg-amber-400/8 blur-3xl pointer-events-none" />
+      <section className="relative bg-white overflow-hidden">
+        {/* Subtle colour wash — top-right */}
+        <div className="absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full bg-[#0D6493]/5 blur-3xl pointer-events-none" />
+        {/* Subtle colour wash — bottom-left */}
+        <div className="absolute -bottom-16 -left-16 w-[320px] h-[320px] rounded-full bg-amber-400/6 blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[560px]">
+        <div className="relative z-10 mx-auto max-w-[1540px] px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[52%_48%] items-center min-h-[calc(100vh-78px)] py-12 lg:py-0">
 
             {/* LEFT: Text */}
-            <div className="order-2 lg:order-1 flex flex-col justify-center">
+            <div className="order-2 lg:order-1 flex flex-col justify-center py-8 lg:py-0 lg:pr-8 xl:pr-16">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -277,21 +264,15 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16 }}
                   transition={{ duration: 0.45, ease: "easeInOut" }}
-                  className="space-y-6 text-center lg:text-left"
+                  className="space-y-5 text-center lg:text-left"
                 >
-                  {/* Badge */}
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#0D6493]/8 text-[#0D6493] border border-[#0D6493]/15 select-none">
-                    <Sparkles className="h-3 w-3" />
-                    {slides[currentSlide].badge}
-                  </span>
-
                   {/* Eyebrow */}
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400 select-none">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 select-none">
                     {slides[currentSlide].eyebrow}
                   </p>
 
                   {/* Heading */}
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-slate-900">
+                  <h1 className="text-4xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-extrabold leading-[1.1] tracking-tight text-slate-900">
                     {slides[currentSlide].heading.map((line, i) => (
                       <span key={i} className="block">
                         {i === slides[currentSlide].highlight ? (
@@ -307,16 +288,16 @@ export default function HomePage() {
                   </h1>
 
                   {/* Description */}
-                  <p className="max-w-xl mx-auto lg:mx-0 text-base lg:text-lg text-slate-500 leading-relaxed">
+                  <p className="max-w-[520px] mx-auto lg:mx-0 text-base text-slate-500 leading-relaxed">
                     {slides[currentSlide].description}
                   </p>
 
                   {/* CTA */}
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-1">
                     {slides[currentSlide].useModal ? (
                       <button
                         onClick={openModal}
-                        className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0D6493] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#0D6493]/25 hover:bg-[#0b5577] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                        className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0D6493] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0D6493]/25 hover:bg-[#0b5577] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                       >
                         {slides[currentSlide].cta}
                         <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
@@ -324,7 +305,7 @@ export default function HomePage() {
                     ) : (
                       <Link
                         href={slides[currentSlide].link || "/"}
-                        className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0D6493] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#0D6493]/25 hover:bg-[#0b5577] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                        className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0D6493] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0D6493]/25 hover:bg-[#0b5577] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
                       >
                         {slides[currentSlide].cta}
                         <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
@@ -332,7 +313,7 @@ export default function HomePage() {
                     )}
                     <button
                       onClick={openModal}
-                      className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 hover:border-[#0D6493] hover:text-[#0D6493] transition-all duration-200 cursor-pointer"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-7 py-3.5 text-sm font-semibold text-slate-700 hover:border-[#0D6493] hover:text-[#0D6493] transition-all duration-200 cursor-pointer"
                     >
                       Free Consultation
                     </button>
@@ -341,7 +322,7 @@ export default function HomePage() {
               </AnimatePresence>
 
               {/* Slide dots */}
-              <div className="flex gap-2 mt-10 justify-center lg:justify-start">
+              <div className="flex gap-2 mt-8 justify-center lg:justify-start">
                 {slides.map((_, i) => (
                   <button
                     key={i}
@@ -351,71 +332,45 @@ export default function HomePage() {
                         ? "w-8 bg-[#0D6493]"
                         : "w-1.5 bg-slate-300 hover:bg-slate-400"
                     }`}
-                    aria-label={`Slide ${i + 1}`}
+                    aria-label={`Go to slide ${i + 1}`}
                   />
                 ))}
               </div>
             </div>
 
-            {/* RIGHT: Image with floating cards */}
-            <div className="order-1 lg:order-2 relative flex justify-center items-center">
-              {/* Decorative ring */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-full border border-dashed border-[#0D6493]/10 animate-[spin_120s_linear_infinite]" />
-
+            {/* RIGHT: Image — displayed clean, no gray blob */}
+            <div className="order-1 lg:order-2 relative flex justify-center items-center py-8 lg:py-0">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
-                  initial={{ opacity: 0, scale: 0.97 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
+                  initial={{ opacity: 0, x: 16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -16 }}
                   transition={{ duration: 0.45, ease: "easeInOut" }}
-                  className="relative"
+                  className="relative w-full flex justify-center"
                 >
-                  <div className="relative w-[340px] h-[400px] sm:w-[420px] sm:h-[480px]">
-                    {/* Image blob */}
-                    <div className="absolute inset-0 rounded-[40px] overflow-hidden bg-slate-100">
-                      <Image
-                        src={slides[currentSlide].image}
-                        alt={slides[currentSlide].eyebrow}
-                        fill
-                        priority
-                        className="object-cover object-center"
-                      />
-                      {/* Gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
-                    </div>
+                  {/* Soft pale-blue halo behind the image */}
+                  <div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] rounded-full pointer-events-none"
+                    style={{
+                      background: "radial-gradient(ellipse at center, #dbeafe 0%, #eff6ff 40%, transparent 75%)",
+                    }}
+                  />
+                  {/* Decorative dashed ring */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88%] h-[88%] rounded-full border border-dashed border-[#0D6493]/12 animate-[spin_90s_linear_infinite] pointer-events-none" />
 
-                    {/* Floating pill — top left */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -12 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3, duration: 0.4 }}
-                      className="absolute -left-6 top-10 bg-white rounded-2xl px-4 py-3 shadow-xl shadow-slate-200/80 flex items-center gap-3 min-w-[160px]"
-                    >
-                      <div className="w-9 h-9 rounded-xl bg-[#0D6493]/10 flex items-center justify-center shrink-0">
-                        <Award className="h-4.5 w-4.5 text-[#0D6493]" />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-slate-400 font-medium leading-none mb-0.5">Success Rate</p>
-                        <p className="text-sm font-extrabold text-slate-900">98% Visas</p>
-                      </div>
-                    </motion.div>
-
-                    {/* Floating pill — bottom right */}
-                    <motion.div
-                      initial={{ opacity: 0, x: 12 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.45, duration: 0.4 }}
-                      className="absolute -right-6 bottom-14 bg-white rounded-2xl px-4 py-3 shadow-xl shadow-slate-200/80 flex items-center gap-3 min-w-[160px]"
-                    >
-                      <div className="w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center shrink-0">
-                        <Star className="h-4.5 w-4.5 text-amber-500 fill-amber-500" />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-slate-400 font-medium leading-none mb-0.5">50+ Countries</p>
-                        <p className="text-sm font-extrabold text-slate-900">1000+ Univ.</p>
-                      </div>
-                    </motion.div>
+                  <div
+                    className="relative"
+                    style={{ width: "min(480px, 90vw)", height: "min(520px, 70vw)" }}
+                  >
+                    <Image
+                      src={slides[currentSlide].image}
+                      alt={slides[currentSlide].eyebrow}
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 90vw, (max-width: 1280px) 50vw, 480px"
+                      className="object-contain object-center"
+                    />
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -656,38 +611,38 @@ export default function HomePage() {
           <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-10">
             Trusted University Partners
           </p>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 items-stretch">
             {/* Image logos */}
             {universityLogos.map((logo, i) => (
               <div
                 key={i}
-                className="h-16 rounded-2xl border border-slate-100 bg-slate-50 flex items-center justify-center px-4 hover:border-slate-200 hover:shadow-sm transition-all"
+                className="h-[130px] rounded-lg border border-blue-100 bg-white shadow-sm flex items-center justify-center px-5 py-4 hover:shadow-md hover:border-blue-200 transition-all duration-200"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={100}
-                  height={40}
-                  className="max-h-10 w-auto object-contain grayscale hover:grayscale-0 transition-all"
+                  width={150}
+                  height={70}
+                  className="w-auto h-auto max-w-[150px] max-h-[70px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
                 />
               </div>
             ))}
             {/* CSS logo: Grenoble */}
-            <div className="h-16 rounded-2xl border border-slate-100 bg-slate-50 flex items-center justify-center px-4 hover:border-slate-200 hover:shadow-sm transition-all">
-              <div className="flex flex-col items-center">
-                <span className="text-2xl font-black text-slate-900 leading-none">G</span>
-                <span className="text-[6px] font-bold uppercase text-center text-slate-600 leading-tight mt-0.5">
+            <div className="h-[130px] rounded-lg border border-blue-100 bg-white shadow-sm flex items-center justify-center px-5 py-4 hover:shadow-md hover:border-blue-200 transition-all duration-200">
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-4xl font-black text-slate-900 leading-none">G</span>
+                <span className="text-[9px] font-bold uppercase text-center text-slate-500 leading-snug tracking-wide">
                   Grenoble<br />École de<br />Management
                 </span>
               </div>
             </div>
             {/* CSS logo: C3S */}
-            <div className="h-16 rounded-2xl border border-slate-100 bg-slate-50 flex items-center justify-center px-4 hover:border-slate-200 hover:shadow-sm transition-all">
-              <div className="flex items-center gap-1.5">
-                <span className="text-xl font-black text-[#0D6493]">C3S</span>
-                <div className="flex flex-col border-l border-slate-300 pl-1.5">
-                  <span className="text-[7px] font-bold text-slate-800 uppercase">Business</span>
-                  <span className="text-[7px] text-slate-400">School</span>
+            <div className="h-[130px] rounded-lg border border-blue-100 bg-white shadow-sm flex items-center justify-center px-5 py-4 hover:shadow-md hover:border-blue-200 transition-all duration-200">
+              <div className="flex items-center gap-2">
+                <span className="text-3xl font-black text-[#0D6493]">C3S</span>
+                <div className="flex flex-col border-l border-slate-200 pl-2">
+                  <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wide">Business</span>
+                  <span className="text-[10px] text-slate-400">School</span>
                 </div>
               </div>
             </div>
