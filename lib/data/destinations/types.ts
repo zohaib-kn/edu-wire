@@ -1,6 +1,10 @@
 export interface DestinationHeroData {
   title: string;
   description: string;
+  /** Optional richDescription rendered with <strong> formatting (used by Italy) */
+  descriptionHtml?: string;
+  /** Optional bullet conditions rendered below description (used by Italy) */
+  heroBullets?: string[];
   image: string;
   imageAlt: string;
   primaryCTA: string;
@@ -10,6 +14,7 @@ export interface DestinationBenefit {
   title: string;
   description: string;
   icon?: string;
+  points?: string[];
 }
 
 export interface DestinationCourse {
@@ -26,6 +31,8 @@ export interface DestinationUniversity {
   courses: DestinationCourse[];
   eligibility: string[];
   careers: string[];
+  logo?: string;
+  logoAlt?: string;
 }
 
 export interface DestinationJourneyStep {
@@ -49,6 +56,69 @@ export interface DestinationFAQ {
   answer: string;
 }
 
+export interface DestinationListingMeta {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  flag: string;
+  published: boolean;
+}
+
+export interface DestinationInstitution {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface DestinationEducationSystem {
+  title: string;
+  description: string;
+  subtitle: string;
+  institutions: DestinationInstitution[];
+}
+
+export interface DestinationPopularCourse {
+  name: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface DestinationPopularCoursesSection {
+  title: string;
+  description: string;
+  courses: DestinationPopularCourse[];
+}
+
+export interface DestinationStudyCostItem {
+  label: string;
+  value: string;
+}
+
+export interface DestinationStudyCostGroup {
+  title: string;
+  costs?: DestinationStudyCostItem[];
+  valueLarge?: string;
+}
+
+export interface DestinationStudyCostsSection {
+  title: string;
+  description: string;
+  groups: DestinationStudyCostGroup[];
+}
+
+export interface DestinationWorkOpportunity {
+  name: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface DestinationWorkOpportunitiesSection {
+  title: string;
+  description: string;
+  opportunities: DestinationWorkOpportunity[];
+}
+
 export interface StudyDestination {
   slug: string;
   countryName: string;
@@ -64,6 +134,10 @@ export interface StudyDestination {
     points: string[];
   };
   benefits: DestinationBenefit[];
+  educationSystem?: DestinationEducationSystem;
+  popularCourses?: DestinationPopularCoursesSection;
+  studyCosts?: DestinationStudyCostsSection;
+  workOpportunities?: DestinationWorkOpportunitiesSection;
   universities: DestinationUniversity[];
   universityNote?: string;
   journey: {
@@ -73,4 +147,6 @@ export interface StudyDestination {
   };
   applicationProcess: DestinationProcessStep[];
   faqs: DestinationFAQ[];
+  listing?: DestinationListingMeta;
 }
+

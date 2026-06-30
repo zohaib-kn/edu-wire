@@ -11,7 +11,7 @@ export interface Service {
 
 export const servicesData: Service[] = [
   {
-    slug: "ielts-training",
+    slug: "ielts",
     title: "IELTS Training",
     shortDesc: "Achieve a high band score with certified trainers and proven exam strategies.",
     description: "The International English Language Testing System (IELTS) is the world's most popular English language proficiency test for higher education and global migration. Our structured training program is designed to build your skills across all four sections: Listening, Reading, Writing, and Speaking, ensuring you hit your target band score.",

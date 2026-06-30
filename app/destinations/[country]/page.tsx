@@ -5,6 +5,10 @@ import { getDestinationBySlug, destinationsData } from "@/lib/data/destinations"
 import DestinationHero from "@/components/destinations/DestinationHero";
 import DestinationAbout from "@/components/destinations/DestinationAbout";
 import WhyStudySection from "@/components/destinations/WhyStudySection";
+import DestinationEducationSystem from "@/components/destinations/DestinationEducationSystem";
+import DestinationPopularCourses from "@/components/destinations/DestinationPopularCourses";
+import DestinationStudyCosts from "@/components/destinations/DestinationStudyCosts";
+import DestinationWorkOpportunities from "@/components/destinations/DestinationWorkOpportunities";
 import DestinationUniversities from "@/components/destinations/DestinationUniversities";
 import DestinationProcessWrapper from "@/components/destinations/DestinationProcessWrapper";
 import DestinationFAQSection from "@/components/destinations/DestinationFAQSection";
@@ -18,7 +22,7 @@ interface PageProps {
 
 export async function generateStaticParams() {
   const legacySlugs = destinationsData.map((d) => ({ country: d.slug }));
-  const premiumSlugs = ["uk", "australia", "usa", "canada"].map((slug) => ({ country: slug }));
+  const premiumSlugs = ["uk", "australia", "usa", "canada", "germany", "ireland", "italy", "new-zealand", "france", "spain", "romania"].map((slug) => ({ country: slug }));
   
   // Combine unique slugs
   const allSlugs = [...premiumSlugs];
@@ -70,6 +74,18 @@ export default async function DestinationDetailsPage({ params }: PageProps) {
         <DestinationHero key={premiumData.slug} data={premiumData.hero} />
         <DestinationAbout data={premiumData.about} />
         <WhyStudySection benefits={premiumData.benefits} countryName={premiumData.countryName} />
+        {premiumData.educationSystem && (
+          <DestinationEducationSystem data={premiumData.educationSystem} />
+        )}
+        {premiumData.popularCourses && (
+          <DestinationPopularCourses data={premiumData.popularCourses} />
+        )}
+        {premiumData.studyCosts && (
+          <DestinationStudyCosts data={premiumData.studyCosts} />
+        )}
+        {premiumData.workOpportunities && (
+          <DestinationWorkOpportunities data={premiumData.workOpportunities} />
+        )}
         <DestinationUniversities
           universities={premiumData.universities}
           note={premiumData.universityNote}

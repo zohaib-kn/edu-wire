@@ -491,4 +491,12 @@ export const usaDestination: StudyDestination = {
         "Yes, international students can work under OPT (Optional Practical Training) for up to 12 months after graduation. STEM graduates may be eligible for a 24-month OPT extension.",
     },
   ],
+  listing: {
+    title: "United States",
+    description: "Ivy League prestige, Ivy research funding, and up to 3 years OPT for STEM graduates. The gold standard for global higher education.",
+    image: "/images/destinations/[country]/listing/USA img1.jpg",
+    imageAlt: "Study in the United States",
+    flag: "/images/flags/usa.jpeg",
+    published: true,
+  },
 };

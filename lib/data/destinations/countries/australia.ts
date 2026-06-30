@@ -64,6 +64,8 @@ export const australiaDestination: StudyDestination = {
       image: "",
       imageAlt: "Australian National University (ANU)",
       ranking: "QS World University Rankings: 30",
+      logo: "/images/destinations/australia/universities/logos/australian-national-university-logo.svg",
+      logoAlt: "Australian National University (ANU) logo",
       courses: [
         { name: "Engineering", duration: "6 Years", annualTuitionFee: "3500 AUD" },
         { name: "Data Science", duration: "5 Years", annualTuitionFee: "4000 AUD" },
@@ -81,6 +83,8 @@ export const australiaDestination: StudyDestination = {
       image: "",
       imageAlt: "Monash University",
       ranking: "QS World University Rankings: 37",
+      logo: "/images/destinations/australia/universities/logos/monash-university-logo.svg",
+      logoAlt: "Monash University logo",
       courses: [
         { name: "Mechanical Engineering", duration: "6 Years", annualTuitionFee: "3600 AUD" },
         { name: "Artificial Intelligence", duration: "5 Years", annualTuitionFee: "3800 AUD" },
@@ -98,6 +102,8 @@ export const australiaDestination: StudyDestination = {
       image: "",
       imageAlt: "The University of Adelaide",
       ranking: "QS World University Rankings: 82",
+      logo: "/images/destinations/australia/universities/logos/university-of-adelaide-logo.svg",
+      logoAlt: "The University of Adelaide logo",
       courses: [
         { name: "Mechatronics", duration: "6 Years", annualTuitionFee: "3400 AUD" },
         { name: "Computer Science", duration: "5 Years", annualTuitionFee: "3700 AUD" },
@@ -115,6 +121,8 @@ export const australiaDestination: StudyDestination = {
       image: "/images/destinations/australia/universities/university-of-melbourne.webp",
       imageAlt: "The University of Melbourne",
       ranking: "QS World University Rankings: 13",
+      logo: "/images/destinations/australia/universities/logos/university-of-melbourne-logo.svg",
+      logoAlt: "The University of Melbourne logo",
       courses: [
         { name: "Life Sciences", duration: "6 Years", annualTuitionFee: "3900 AUD" },
         { name: "Medicine", duration: "6 Years", annualTuitionFee: "5000 AUD" },
@@ -132,6 +140,8 @@ export const australiaDestination: StudyDestination = {
       image: "/images/destinations/australia/universities/university-of-queensland.webp",
       imageAlt: "The University of Queensland",
       ranking: "QS World University Rankings: 40",
+      logo: "/images/destinations/australia/universities/logos/university-of-queensland-logo.svg",
+      logoAlt: "The University of Queensland logo",
       courses: [
         { name: "Social Sciences", duration: "4 Years", annualTuitionFee: "3200 AUD" },
         { name: "Economics", duration: "5 Years", annualTuitionFee: "3300 AUD" },
@@ -149,6 +159,8 @@ export const australiaDestination: StudyDestination = {
       image: "/images/destinations/australia/universities/university-of-sydney.webp",
       imageAlt: "The University of Sydney",
       ranking: "QS World University Rankings: 18",
+      logo: "/images/destinations/australia/universities/logos/university-of-sydney-logo.svg",
+      logoAlt: "The University of Sydney logo",
       courses: [
         { name: "Humanities", duration: "4 Years", annualTuitionFee: "3100 AUD" },
         { name: "Physics", duration: "5 Years", annualTuitionFee: "3900 AUD" },
@@ -485,5 +497,13 @@ export const australiaDestination: StudyDestination = {
       question: "Can I stay in Australia after completing my studies?",
       answer: "Yes, eligible graduates can apply for a Temporary Graduate Visa (subclass 485), allowing them to stay and work in Australia for 2 to 4 years based on their qualification."
     }
-  ]
+  ],
+  listing: {
+    title: "Australia",
+    description: "World-class Group of Eight universities, a vibrant multicultural campus life, and up to 4 years post-study work visa with clear PR pathways.",
+    image: "/images/destinations/[country]/listing/Australia img.jpg",
+    imageAlt: "Study in Australia",
+    flag: "/images/flags/australia.png",
+    published: true,
+  },
 };

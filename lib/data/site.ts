@@ -28,7 +28,7 @@ export const siteConfig = {
         name: "Our Services",
         href: "/services",
         children: [
-          { name: "IELTS Training", href: "/services/ielts-training" },
+          { name: "IELTS Training", href: "/services/ielts" },
           { name: "IMAT Preparation", href: "/services/imat-preparation" },
           { name: "Scholarship Guidance", href: "/services/scholarship-guidance" },
           { name: "Admission Guidance", href: "/services/admission-guidance" },

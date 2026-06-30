@@ -16,11 +16,11 @@ interface DestinationJourneyProps {
 
 export default function DestinationJourney({ journey, activeStep = 0, onStepClick }: DestinationJourneyProps) {
   return (
-    <section className="py-16 bg-white select-none">
+    <section className="py-12 bg-white select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-8 space-y-3">
           <div className="inline-block px-4 py-1.5 rounded-full bg-[#0D6493]/5 text-[#0D6493] text-xs font-bold uppercase tracking-wider">
             Timeline
           </div>

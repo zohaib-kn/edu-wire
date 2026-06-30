@@ -16,11 +16,11 @@ export default function DestinationFAQSection({ faqs }: DestinationFAQSectionPro
   };
 
   return (
-    <section className="py-20 bg-white select-none">
+    <section className="py-16 bg-white select-none">
       <div className="max-w-4xl mx-auto px-6 md:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <div className="inline-block px-4 py-1.5 rounded-full bg-[#0D6493]/5 text-[#0D6493] text-xs font-bold uppercase tracking-wider">
             FAQs
           </div>
@@ -30,7 +30,7 @@ export default function DestinationFAQSection({ faqs }: DestinationFAQSectionPro
         </div>
 
         {/* FAQs Accordion */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             const ariaId = `faq-content-${idx}`;
@@ -39,7 +39,7 @@ export default function DestinationFAQSection({ faqs }: DestinationFAQSectionPro
             return (
               <div
                 key={idx}
-                className={`rounded-2xl border transition-all duration-300 ${
+                className={`rounded-xl border transition-all duration-300 ${
                   isOpen
                     ? "bg-[#0D6493]/3 border-[#0D6493]/20 shadow-sm"
                     : "bg-slate-50 border-slate-100 hover:bg-slate-100/50"

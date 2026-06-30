@@ -131,34 +131,57 @@ export default function Navbar() {
 
                 if (item.children) {
                   const isLargeDropdown = item.children.length > 5;
+                  const hasParentLink = !!item.href;
                   return (
                     <div
                       key={item.name}
                       className="relative"
-                      onMouseEnter={() => openOnHover(item.name)}
                       onMouseLeave={closeOnHover}
                     >
-                      <button
-                        className={`relative flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-all duration-200 outline-none select-none whitespace-nowrap ${
-                          isActiveParent
-                            ? "text-[#0D6493]"
-                            : "text-slate-700 hover:text-[#0D6493]"
-                        }`}
-                        aria-expanded={activeDropdown === item.name}
-                        aria-haspopup="true"
-                      >
-                        <span className="relative">
-                          {item.name}
-                          {isActiveParent && (
-                            <span className="absolute -bottom-[3px] left-0 right-0 h-[2px] bg-[#0D6493] rounded-full" />
-                          )}
-                        </span>
-                        <ChevronDown
-                          className={`h-3.5 w-3.5 opacity-50 transition-transform duration-300 ${
-                            activeDropdown === item.name ? "rotate-180" : ""
+                      {/* Split: label navigates, chevron toggles dropdown */}
+                      <div className="flex items-center">
+                        {hasParentLink ? (
+                          <Link
+                            href={item.href!}
+                            className={`relative flex items-center px-3 py-2 text-[15px] font-medium transition-all duration-200 outline-none select-none whitespace-nowrap ${
+                              isActiveParent
+                                ? "text-[#0D6493]"
+                                : "text-slate-700 hover:text-[#0D6493]"
+                            }`}
+                          >
+                            <span className="relative">
+                              {item.name}
+                              {isActiveParent && (
+                                <span className="absolute -bottom-[3px] left-0 right-0 h-[2px] bg-[#0D6493] rounded-full" />
+                              )}
+                            </span>
+                          </Link>
+                        ) : (
+                          <span
+                            className={`relative px-3 py-2 text-[15px] font-medium select-none whitespace-nowrap ${
+                              isActiveParent ? "text-[#0D6493]" : "text-slate-700"
+                            }`}
+                          >
+                            {item.name}
+                          </span>
+                        )}
+                        <button
+                          onMouseEnter={() => openOnHover(item.name)}
+                          onClick={() => toggleDropdown(item.name)}
+                          className={`flex items-center px-1 py-2 transition-all duration-200 outline-none ${
+                            isActiveParent ? "text-[#0D6493]" : "text-slate-400 hover:text-[#0D6493]"
                           }`}
-                        />
-                      </button>
+                          aria-expanded={activeDropdown === item.name}
+                          aria-haspopup="true"
+                          aria-label={`Toggle ${item.name} menu`}
+                        >
+                          <ChevronDown
+                            className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                              activeDropdown === item.name ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      </div>
 
                       {/* Dropdown Menu */}
                       <div
@@ -172,6 +195,7 @@ export default function Navbar() {
                             : "opacity-0 -translate-y-1 pointer-events-none"
                         }`}
                         role="menu"
+                        onMouseEnter={() => openOnHover(item.name)}
                       >
                         <div
                           className={`bg-white rounded-xl shadow-xl shadow-slate-900/8 border border-slate-100 p-2.5 ${
@@ -307,25 +331,48 @@ export default function Navbar() {
               const isActiveParent =
                 item.href === "/"
                   ? pathname === "/"
-                  : pathname.startsWith(item.href);
+                  : pathname.startsWith(item.href ?? "");
               const isLargeDropdown = item.children.length > 5;
+              const hasParentLink = !!item.href;
               return (
                 <div key={item.name} className="py-0.5">
-                  <button
-                    onClick={() => toggleDropdown(item.name)}
-                    className={`flex w-full items-center justify-between rounded-xl px-3.5 py-3 text-base font-bold transition-colors ${
-                      isActiveParent
-                        ? "text-[#0D6493] bg-[#0D6493]/5"
-                        : "text-slate-700 hover:bg-slate-50"
+                  {/* Split row: label Link + chevron button */}
+                  <div
+                    className={`flex items-center rounded-xl transition-colors ${
+                      isActiveParent ? "bg-[#0D6493]/5" : "hover:bg-slate-50"
                     }`}
                   >
-                    <span>{item.name}</span>
-                    <ChevronDown
-                      className={`h-5 w-5 text-slate-400 transition-transform duration-200 ${
-                        activeDropdown === item.name ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
+                    {hasParentLink ? (
+                      <Link
+                        href={item.href!}
+                        className={`flex-1 px-3.5 py-3 text-base font-bold transition-colors ${
+                          isActiveParent ? "text-[#0D6493]" : "text-slate-700"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <span
+                        className={`flex-1 px-3.5 py-3 text-base font-bold ${
+                          isActiveParent ? "text-[#0D6493]" : "text-slate-700"
+                        }`}
+                      >
+                        {item.name}
+                      </span>
+                    )}
+                    <button
+                      onClick={() => toggleDropdown(item.name)}
+                      aria-expanded={activeDropdown === item.name}
+                      aria-label={`Toggle ${item.name} submenu`}
+                      className="flex items-center justify-center w-12 h-12 shrink-0 text-slate-400 transition-colors hover:text-[#0D6493] focus:outline-none"
+                    >
+                      <ChevronDown
+                        className={`h-5 w-5 transition-transform duration-200 ${
+                          activeDropdown === item.name ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
                       activeDropdown === item.name

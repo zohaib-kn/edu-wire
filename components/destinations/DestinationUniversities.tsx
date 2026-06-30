@@ -15,19 +15,22 @@ export default function DestinationUniversities({ universities, note, countryNam
   // Helper to get university initials for the fallback card
   const getInitials = (name: string) => {
     return name
+      .replace(/\(.*?\)/g, "")
       .replace(/University of /i, "")
-      .split(" ")
+      .replace(/The /i, "")
+      .trim()
+      .split(/\s+/)
       .map((word) => word[0])
       .join("")
       .toUpperCase();
   };
 
   return (
-    <section className="py-20 bg-slate-50 select-none">
+    <section className="py-16 bg-slate-50 select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <div className="inline-block px-4 py-1.5 rounded-full bg-[#0D6493]/5 text-[#0D6493] text-xs font-bold uppercase tracking-wider">
             Institutions
           </div>
@@ -37,7 +40,7 @@ export default function DestinationUniversities({ universities, note, countryNam
         </div>
 
         {/* Universities List */}
-        <div className="space-y-24">
+        <div className="space-y-14">
           {universities.map((uni, idx) => {
             const isEven = idx % 2 === 0;
             const initials = getInitials(uni.name);
@@ -53,8 +56,21 @@ export default function DestinationUniversities({ universities, note, countryNam
                     isEven ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  {uni.image ? (
-                    <div className="relative w-full h-[240px] sm:h-[320px] rounded-3xl overflow-hidden shadow-sm border border-slate-200/50 bg-white p-6 flex items-center justify-center">
+                  {uni.logo ? (
+                    <div className="relative w-full h-[200px] sm:h-[280px] rounded-xl overflow-hidden shadow-sm border border-[#0D6493]/15 bg-white p-10 flex items-center justify-center">
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <Image
+                          src={uni.logo}
+                          alt={uni.logoAlt || `${uni.name} logo`}
+                          width={320}
+                          height={160}
+                          unoptimized={true}
+                          className="max-h-40 w-auto max-w-full object-contain"
+                        />
+                      </div>
+                    </div>
+                  ) : uni.image ? (
+                    <div className="relative w-full h-[200px] sm:h-[280px] rounded-xl overflow-hidden shadow-sm border border-slate-200/50 bg-white p-5 flex items-center justify-center">
                       <div className="relative w-full h-full">
                         <Image
                           src={uni.image}
@@ -68,7 +84,7 @@ export default function DestinationUniversities({ universities, note, countryNam
                     </div>
                   ) : (
                     /* Premium initials-based fallback card */
-                    <div className="w-full h-[240px] sm:h-[320px] bg-gradient-to-br from-[#0D6493]/5 to-[#0D6493]/15 flex flex-col items-center justify-center rounded-3xl border border-[#0D6493]/15 relative p-6 text-center shadow-inner">
+                    <div className="w-full h-[200px] sm:h-[280px] bg-gradient-to-br from-[#0D6493]/5 to-[#0D6493]/15 flex flex-col items-center justify-center rounded-xl border border-[#0D6493]/15 relative p-5 text-center shadow-inner">
                       <div className="w-20 h-20 rounded-full bg-[#0D6493]/10 flex items-center justify-center mb-4">
                         <span className="text-[#0D6493] font-bold text-2xl tracking-wider">
                           {initials}
@@ -177,7 +193,7 @@ export default function DestinationUniversities({ universities, note, countryNam
 
         {/* University Note */}
         {note && (
-          <div className="mt-20 p-5 rounded-2xl bg-amber-500/5 border border-amber-500/10 flex items-start gap-3.5 max-w-4xl mx-auto">
+          <div className="mt-10 p-4 rounded-xl bg-amber-500/5 border border-amber-500/10 flex items-start gap-3 max-w-4xl mx-auto">
             <Calendar className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
             <p className="text-sm font-semibold text-slate-700 leading-relaxed italic">
               {note}

@@ -64,6 +64,8 @@ export const ukDestination: StudyDestination = {
       image: "/images/destinations/uk/universities/university-of-bristol.webp",
       imageAlt: "University of Bristol",
       ranking: "QS World University Rankings: 54",
+      logo: "/images/destinations/uk/universities/logos/university-of-bristol-logo.svg",
+      logoAlt: "University of Bristol logo",
       courses: [
         { name: "Engineering", duration: "6 Years", annualTuitionFee: "3500 EUR" },
         { name: "Data Science", duration: "5 Years", annualTuitionFee: "4000 EUR" },
@@ -81,6 +83,8 @@ export const ukDestination: StudyDestination = {
       image: "/images/destinations/uk/universities/university-of-leeds.webp",
       imageAlt: "University of Leeds",
       ranking: "QS World University Rankings: 82",
+      logo: "/images/destinations/uk/universities/logos/university-of-leeds-logo.svg",
+      logoAlt: "University of Leeds logo",
       courses: [
         { name: "Mechanical Engineering", duration: "6 Years", annualTuitionFee: "3600 EUR" },
         { name: "Artificial Intelligence", duration: "5 Years", annualTuitionFee: "3800 EUR" },
@@ -98,6 +102,8 @@ export const ukDestination: StudyDestination = {
       image: "",
       imageAlt: "Imperial College London",
       ranking: "QS World University Rankings: 2",
+      logo: "/images/destinations/uk/universities/logos/imperial-college-london-logo.png",
+      logoAlt: "Imperial College London logo",
       courses: [
         { name: "Mechatronics", duration: "6 Years", annualTuitionFee: "3400 EUR" },
         { name: "Computer Science", duration: "5 Years", annualTuitionFee: "3700 EUR" },
@@ -115,6 +121,8 @@ export const ukDestination: StudyDestination = {
       image: "",
       imageAlt: "University of Sheffield",
       ranking: "QS World University Rankings: 105",
+      logo: "/images/destinations/uk/universities/logos/university-of-sheffield-logo.svg",
+      logoAlt: "University of Sheffield logo",
       courses: [
         { name: "Life Sciences", duration: "6 Years", annualTuitionFee: "3900 EUR" },
         { name: "Medicine", duration: "6 Years", annualTuitionFee: "5000 EUR" },
@@ -132,6 +140,8 @@ export const ukDestination: StudyDestination = {
       image: "",
       imageAlt: "University of Birmingham",
       ranking: "QS World University Rankings: 80",
+      logo: "/images/destinations/uk/universities/logos/university-of-birmingham-logo.svg",
+      logoAlt: "University of Birmingham logo",
       courses: [
         { name: "Social Sciences", duration: "4 Years", annualTuitionFee: "3200 EUR" },
         { name: "Economics", duration: "5 Years", annualTuitionFee: "3300 EUR" },
@@ -149,6 +159,8 @@ export const ukDestination: StudyDestination = {
       image: "/images/destinations/uk/universities/university-of-exeter.webp",
       imageAlt: "University of Exeter",
       ranking: "QS World University Rankings: 169",
+      logo: "/images/destinations/uk/universities/logos/university-of-exeter-logo.png",
+      logoAlt: "University of Exeter logo",
       courses: [
         { name: "Humanities", duration: "4 Years", annualTuitionFee: "3100 EUR" },
         { name: "Physics", duration: "5 Years", annualTuitionFee: "3900 EUR" },
@@ -484,5 +496,13 @@ export const ukDestination: StudyDestination = {
       question: "Is there an age limit to study in the UK?",
       answer: "There is no upper age limit to study in the UK. As long as you meet the academic and visa requirements, you can apply at any age."
     }
-  ]
+  ],
+  listing: {
+    title: "United Kingdom",
+    description: "Home to Oxford, Cambridge, and world-leading research universities. Complete a Master's in just one year with a 2-year Graduate Route visa.",
+    image: "/images/destinations/[country]/listing/UK img.jpg",
+    imageAlt: "Study in the United Kingdom",
+    flag: "/images/flags/uk.jpeg",
+    published: true,
+  },
 };

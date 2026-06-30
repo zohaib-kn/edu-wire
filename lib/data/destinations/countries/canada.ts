@@ -481,5 +481,13 @@ export const canadaDestination: StudyDestination = {
       question: "Is it possible to get permanent residency in Canada after studying?",
       answer: "Yes, international graduates can apply for permanent residency through pathways like the Canadian Experience Class (CEC) under the Express Entry system."
     }
-  ]
+  ],
+  listing: {
+    title: "Canada",
+    description: "Affordable tuition, co-op programs with paid internships, and a clear PGWP pathway to permanent residency. A top choice for global students.",
+    image: "/images/destinations/[country]/listing/Canada img.jpg",
+    imageAlt: "Study in Canada",
+    flag: "/images/flags/canada.png",
+    published: true,
+  },
 };

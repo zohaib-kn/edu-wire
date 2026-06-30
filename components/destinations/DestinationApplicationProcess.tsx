@@ -29,7 +29,7 @@ export default function DestinationApplicationProcess({
             return (
               <div
                 key={idx}
-                className={`bg-white rounded-3xl border transition-all duration-300 ${
+                className={`bg-white rounded-xl border transition-all duration-300 ${
                   isOpen
                     ? "border-primary/20 shadow-md ring-4 ring-[#0D6493]/3"
                     : "border-slate-150 hover:border-slate-200 shadow-sm"
@@ -39,7 +39,7 @@ export default function DestinationApplicationProcess({
                 <h3 id={headerId}>
                   <button
                     onClick={() => onStepChange(isOpen ? -1 : idx)}
-                    className="w-full text-left px-6 py-5 md:py-6 flex items-center justify-between gap-4 font-bold text-slate-950 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset rounded-3xl"
+                    className="w-full text-left px-6 py-4 md:py-5 flex items-center justify-between gap-4 font-bold text-slate-950 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset rounded-xl"
                     aria-expanded={isOpen}
                     aria-controls={ariaId}
                   >
@@ -74,7 +74,7 @@ export default function DestinationApplicationProcess({
                     isOpen ? "max-h-[2500px] border-t border-slate-100 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
                   }`}
                 >
-                  <div className="px-6 py-6 md:px-8 md:py-8 space-y-8">
+                  <div className="px-6 py-5 md:px-7 md:py-6 space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6.5">
                       {step.sections.map((section, sIdx) => {
                         const isWarning = section.heading && section.heading.includes("⚠️");
@@ -83,7 +83,7 @@ export default function DestinationApplicationProcess({
                         return (
                           <div
                             key={sIdx}
-                            className={`p-6 rounded-2xl border ${
+                            className={`p-5 rounded-xl border ${
                               isWarning
                                 ? "bg-red-50/50 border-red-100"
                                 : isNote
