@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { useModal } from "@/components/context/ModalContext";
 import { submitConsultationForm, FormResponse } from "@/app/actions/form";
 import {
@@ -12,8 +13,6 @@ import {
   GraduationCap,
   Flag,
   Loader2,
-  Globe,
-  Award,
   Sparkles,
   CheckCircle,
   AlertCircle
@@ -69,7 +68,7 @@ export default function ConsultationModal() {
       <div className="absolute inset-0" onClick={closeModal} />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-lg md:max-w-4xl bg-white rounded-[28px] md:rounded-[32px] shadow-2xl overflow-hidden border border-slate-100/50 max-h-[90vh] z-10 flex flex-col md:flex-row items-stretch animate-slide-up">
+      <div className="relative w-full max-w-lg md:max-w-[960px] bg-white rounded-[28px] md:rounded-[32px] shadow-2xl overflow-hidden border border-slate-100/50 max-h-[90vh] z-10 flex flex-col md:flex-row items-stretch animate-slide-up">
         
         {/* Close Button */}
         <button
@@ -81,7 +80,7 @@ export default function ConsultationModal() {
         </button>
 
         {/* Left Side: Form Panel */}
-        <div className="w-full md:w-[55%] p-6 sm:p-8 md:p-10 overflow-y-auto max-h-[85vh] md:max-h-[90vh] scrollbar-thin">
+        <div className="w-full md:w-[52%] p-6 sm:p-8 md:p-10 overflow-y-auto max-h-[85vh] md:max-h-[90vh] scrollbar-thin">
           <div className="mb-6">
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-blue-50 text-[11px] font-semibold text-primary mb-2">
               <Sparkles className="h-3 w-3" /> Free Counselling
@@ -231,56 +230,39 @@ export default function ConsultationModal() {
         </div>
 
         {/* Right Side: Visual Panel (Hidden on mobile) */}
-        <div className="hidden md:flex md:w-[45%] bg-gradient-to-br from-blue-50/90 via-sky-50/30 to-blue-50/50 p-8 lg:p-10 flex-col justify-between border-l border-slate-100/50 relative overflow-hidden select-none">
+        <div className="hidden md:flex md:w-[48%] bg-gradient-to-br from-blue-50/90 via-sky-50/30 to-blue-50/50 border-l border-slate-100/50 relative overflow-hidden select-none flex-col justify-between py-6 lg:py-8 px-0">
           {/* Subtle background decoration */}
           <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-sky-400/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3 pointer-events-none" />
           
-          <div className="relative z-10 space-y-6">
-            <div>
-              <h3 className="text-lg font-bold text-slate-900">Why Edu-Wire?</h3>
-              <p className="text-slate-500 text-xs mt-1">Your journey towards international education starts with professional care.</p>
-            </div>
-
-            <div className="space-y-4">
-              {/* Bullet 1 */}
-              <div className="flex gap-3 items-start p-3 bg-white/60 hover:bg-white/90 border border-slate-100 rounded-2xl transition-all duration-300">
-                <div className="h-9 w-9 rounded-xl bg-blue-50 flex items-center justify-center text-primary shrink-0">
-                  <GraduationCap className="h-4.5 w-4.5" />
-                </div>
-                <div className="space-y-0.5">
-                  <h4 className="font-bold text-slate-900 text-xs">Expert Guidance</h4>
-                  <p className="text-slate-500 text-[11px] leading-relaxed">Personalized path from certified study abroad experts.</p>
-                </div>
-              </div>
-
-              {/* Bullet 2 */}
-              <div className="flex gap-3 items-start p-3 bg-white/60 hover:bg-white/90 border border-slate-100 rounded-2xl transition-all duration-300">
-                <div className="h-9 w-9 rounded-xl bg-blue-50 flex items-center justify-center text-primary shrink-0">
-                  <Globe className="h-4.5 w-4.5" />
-                </div>
-                <div className="space-y-0.5">
-                  <h4 className="font-bold text-slate-900 text-xs">University Selection</h4>
-                  <p className="text-slate-500 text-[11px] leading-relaxed">Choose the perfect match from hundreds of top global institutions.</p>
-                </div>
-              </div>
-
-              {/* Bullet 3 */}
-              <div className="flex gap-3 items-start p-3 bg-white/60 hover:bg-white/90 border border-slate-100 rounded-2xl transition-all duration-300">
-                <div className="h-9 w-9 rounded-xl bg-blue-50 flex items-center justify-center text-primary shrink-0">
-                  <Award className="h-4.5 w-4.5" />
-                </div>
-                <div className="space-y-0.5">
-                  <h4 className="font-bold text-slate-900 text-xs">Visa Support</h4>
-                  <p className="text-slate-500 text-[11px] leading-relaxed">Step-by-step assistance for a high visa success rate.</p>
-                </div>
-              </div>
-            </div>
+          {/* Top text block */}
+          <div className="relative z-10 px-6 lg:px-8">
+            <span className="text-[10px] font-bold text-primary tracking-wider uppercase bg-blue-50/80 px-2.5 py-1 rounded-full">1-on-1 Session</span>
+            <h3 className="text-xl font-extrabold text-slate-900 mt-2.5 leading-tight">Expert Counseling</h3>
+            <p className="text-slate-500 text-xs mt-1.5 leading-relaxed">
+              Connect with top-rated advisors to find the perfect university matching your profile.
+            </p>
           </div>
 
-          <div className="relative z-10 pt-4 border-t border-slate-100 text-[11px] text-slate-400 flex items-center gap-1.5 font-medium">
-            <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-            Licensed Overseas Education Counselors
+          {/* Image container in middle (no horizontal padding, full width) */}
+          <div className="relative z-10 w-full flex-1 flex items-center justify-center py-4">
+            <Image
+              src="/images/consultation/consultation-modal-visual.jpg"
+              alt="Expert counseling consultation"
+              width={720}
+              height={480}
+              className="h-auto w-full max-w-full max-h-[380px] object-contain mix-blend-multiply"
+              priority
+            />
+          </div>
+
+          {/* Bottom trust indicators */}
+          <div className="relative z-10 pt-4 border-t border-slate-200/60 text-[11px] text-slate-500 flex items-center justify-between font-medium mx-6 lg:mx-8">
+            <span className="flex items-center gap-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+              100% Free Consultation
+            </span>
+            <span className="text-slate-400">Certified Experts Only</span>
           </div>
         </div>
 

@@ -1,9 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/data/site";
-import { Phone, Mail, MapPin, ExternalLink, ArrowUpRight, MessageCircle, ChevronRight } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  ExternalLink,
+  ArrowUpRight,
+  MessageCircle,
+  ChevronRight,
+  ArrowUp,
+} from "lucide-react";
 
 const socialLinks = [
   {
@@ -98,18 +108,59 @@ const offices = [
   },
 ];
 
+// Small helper so every footer column heading lines up identically.
+function ColumnHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-6 pb-2.5 border-b border-slate-800/80 relative">
+      {children}
+      <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-[#0D6493]" />
+    </h3>
+  );
+}
+
+function FooterLink({ href, label }: { href: string; label: string }) {
+  return (
+    <li>
+      <Link
+        href={href}
+        className="text-sm text-slate-400 hover:text-white hover:translate-x-1.5 transition-all duration-300 inline-flex items-center gap-1 group font-medium"
+      >
+        <ChevronRight className="h-3 w-3 text-[#0D6493] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 shrink-0" />
+        <span>{label}</span>
+      </Link>
+    </li>
+  );
+}
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowTopBtn(window.scrollY > 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <footer className="bg-gradient-to-b from-slate-950 to-slate-900 text-slate-400 border-t border-slate-800/50 relative overflow-hidden">
       {/* Decorative gradient orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0D6493]/10 rounded-full blur-3xl -translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* ── CTA Banner ── */}
-      <div className="relative bg-gradient-to-r from-primary/90 via-primary to-primary/80 py-6 shadow-xl shadow-primary/20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="relative overflow-hidden bg-gradient-to-r from-primary/90 via-primary to-primary/80 py-6 shadow-xl shadow-primary/20">
+        <div
+          className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(currentColor 1px, transparent 1px)",
+            backgroundSize: "16px 16px",
+            color: "#ffffff",
+          }}
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <p className="text-white font-semibold text-lg sm:text-xl tracking-tight">
               Ready to study abroad? 🌍
@@ -123,7 +174,7 @@ export default function Footer() {
               href={`https://wa.me/${siteConfig.contact.phones[0].replace(/\D/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-primary text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-white/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-black/20"
+              className="inline-flex items-center gap-2 bg-white text-[#0D6493] text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-white/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-black/20"
             >
               <MessageCircle className="h-4 w-4" />
               WhatsApp Us
@@ -141,12 +192,20 @@ export default function Footer() {
 
       {/* ── Main Grid ── */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-12">
+        {/* 5 balanced groups on desktop: Brand(4) + 4 link columns(2 each) = 12 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-x-8 gap-y-12">
 
-          {/* Brand Column — spans 4 cols */}
-          <div className="md:col-span-4">
-            <Link href="/" className="inline-block text-3xl font-bold text-white tracking-tight mb-4 hover:text-primary transition-colors">
-              {siteConfig.name}
+          {/* Brand Column */}
+          <div className="sm:col-span-2 md:col-span-4">
+            <Link href="/" className="inline-block mb-5 group">
+              <Image
+                src="/images/Edu-wire-log.png"
+                alt="Edu-Wire Logo"
+                width={160}
+                height={38}
+                className="h-9 w-auto object-contain brightness-0 invert opacity-95 group-hover:opacity-100 transition-opacity"
+                priority
+              />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
               {siteConfig.description}
@@ -158,8 +217,8 @@ export default function Footer() {
                 href={`tel:${siteConfig.contact.phones[0]}`}
                 className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition-colors group"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-800/80 group-hover:bg-primary/20 transition-colors border border-slate-700/50 group-hover:border-primary/30">
-                  <Phone className="h-4 w-4 text-primary" />
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-800/80 group-hover:bg-[#0D6493]/20 transition-colors border border-slate-700/50 group-hover:border-[#0D6493]/30">
+                  <Phone className="h-4 w-4 text-[#0D6493]" />
                 </span>
                 <span>{siteConfig.contact.phones.join("  ·  ")}</span>
               </a>
@@ -167,15 +226,15 @@ export default function Footer() {
                 href={`mailto:${siteConfig.contact.emails[0]}`}
                 className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition-colors group"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-800/80 group-hover:bg-primary/20 transition-colors border border-slate-700/50 group-hover:border-primary/30">
-                  <Mail className="h-4 w-4 text-primary" />
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-800/80 group-hover:bg-[#0D6493]/20 transition-colors border border-slate-700/50 group-hover:border-[#0D6493]/30">
+                  <Mail className="h-4 w-4 text-[#0D6493]" />
                 </span>
                 <span>{siteConfig.contact.emails[0]}</span>
               </a>
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-2">
+            <div className="flex gap-2.5">
               {socialLinks.map((s) => (
                 <a
                   key={s.label}
@@ -191,88 +250,49 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links — spans 2 cols */}
+          {/* Quick Links */}
           <div className="md:col-span-2">
-            <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-5 pb-2 border-b border-slate-800/60">
-              Quick Links
-            </h3>
+            <ColumnHeading>Quick Links</ColumnHeading>
             <ul className="space-y-2.5">
               {quickLinks.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="text-sm text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-1.5 group"
-                  >
-                    <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0" />
-                    {l.label}
-                  </Link>
-                </li>
+                <FooterLink key={l.href} href={l.href} label={l.label} />
               ))}
             </ul>
           </div>
 
-          {/* MBBS Abroad — spans 3 cols */}
-          <div className="md:col-span-3">
-            <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-5 pb-2 border-b border-slate-800/60">
-              MBBS Abroad
-            </h3>
+          {/* MBBS Abroad */}
+          <div className="md:col-span-2">
+            <ColumnHeading>MBBS Abroad</ColumnHeading>
             <ul className="space-y-2.5">
               {mbbsLinks.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="text-sm text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-1.5 group"
-                  >
-                    <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0" />
-                    {l.label}
-                  </Link>
-                </li>
+                <FooterLink key={l.href} href={l.href} label={l.label} />
               ))}
-              <li className="pt-2">
-                <Link
-                  href="/mbbs"
-                  className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 font-semibold transition-colors group"
-                >
-                  View all destinations
-                  <ArrowUpRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </Link>
-              </li>
+            </ul>
+            <Link
+              href="/mbbs"
+              className="mt-4 pt-3 border-t border-slate-800/60 inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 font-semibold transition-colors group"
+            >
+              View all destinations
+              <ArrowUpRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
+          </div>
+
+          {/* Study Destinations */}
+          <div className="md:col-span-2">
+            <ColumnHeading>Study Destinations</ColumnHeading>
+            <ul className="space-y-2.5">
+              {studyDestinations.map((l) => (
+                <FooterLink key={l.href} href={l.href} label={l.label} />
+              ))}
             </ul>
           </div>
 
-          {/* Study Destinations + Legal — spans 3 cols */}
-          <div className="md:col-span-3">
-            <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-5 pb-2 border-b border-slate-800/60">
-              Study Destinations
-            </h3>
-            <ul className="space-y-2.5 mb-8">
-              {studyDestinations.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="text-sm text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-1.5 group"
-                  >
-                    <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0" />
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-5 pb-2 border-b border-slate-800/60">
-              Legal
-            </h3>
+          {/* Legal */}
+          <div className="md:col-span-2">
+            <ColumnHeading>Legal</ColumnHeading>
             <ul className="space-y-2.5">
               {siteConfig.navigation.legal.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-1.5 group"
-                  >
-                    <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0" />
-                    {item.name}
-                  </Link>
-                </li>
+                <FooterLink key={item.name} href={item.href} label={item.name} />
               ))}
             </ul>
           </div>
@@ -280,23 +300,24 @@ export default function Footer() {
 
         {/* ── Office Locations ── */}
         <div className="mt-14 pt-12 border-t border-slate-800/60">
-          <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-6 pb-2 border-b border-slate-800/60">
+          <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-6 pb-2.5 border-b border-slate-800/60 relative">
             Our Offices
+            <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-[#0D6493]" />
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {offices.map((office) => (
               <div
                 key={office.city}
-                className="group relative rounded-2xl border border-slate-800/60 bg-slate-900/40 p-6 hover:border-slate-700 hover:bg-slate-800/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5"
+                className="group relative flex h-full flex-col rounded-2xl border border-slate-800/60 bg-slate-900/30 p-6 hover:border-[#0D6493]/40 hover:bg-slate-900/60 transition-all duration-300 hover:shadow-xl hover:shadow-[#0D6493]/5"
               >
                 {/* Tag */}
-                <span className="absolute top-4 right-4 text-[10px] font-semibold text-primary/90 bg-primary/15 px-2.5 py-0.5 rounded-full border border-primary/20">
+                <span className="absolute top-4 right-4 text-[10px] font-semibold text-[#0D6493]/90 bg-[#0D6493]/10 px-2.5 py-0.5 rounded-full border border-[#0D6493]/20">
                   {office.tag}
                 </span>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                    <MapPin className="h-4.5 w-4.5 text-primary" />
+                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0D6493]/10 border border-[#0D6493]/20 group-hover:bg-[#0D6493]/20 transition-colors">
+                    <MapPin className="h-4 w-4 text-[#0D6493]" />
                   </div>
                   <div>
                     <p className="text-white font-semibold text-base mb-1">{office.city}</p>
@@ -308,7 +329,7 @@ export default function Footer() {
                   href={office.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-primary transition-colors group-hover:text-slate-300"
+                  className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[#0D6493] transition-colors group-hover:text-slate-300"
                 >
                   <ExternalLink className="h-3.5 w-3.5" />
                   View on Google Maps
@@ -335,6 +356,18 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      {/* Scroll-to-top */}
+      <button
+        type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Back to top"
+        className={`fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-110 hover:bg-primary/90 ${
+          showTopBtn ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"
+        }`}
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
     </footer>
   );
 }

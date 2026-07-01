@@ -1,0 +1,19 @@
+{
+  "italy": [],
+  "romania": [],
+  "bulgaria": [],
+  "russia": [],
+  "georgia": [],
+  "kazakhstan": [],
+  "kyrgyzstan": [
+    {
+      "url": "https",
+      "reason": "//images.shiksha.com/mediadata/images/1453289462phpq2gbwh.jpeg: HTTP error 403",
+      "fallbackUsed": "University of Rome: /images/mbbs/kyrgyzstan/universities/uni-1.jpg (exists: true)",
+      "exists": true
+    }
+  ],
+  "poland": [],
+  "hungary": [],
+  "serbia": []
+}

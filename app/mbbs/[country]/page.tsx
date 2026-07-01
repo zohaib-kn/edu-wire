@@ -49,27 +49,27 @@ export default async function MBBSDetailsPage({ params }: PageProps) {
   const isPremiumCountry = !!(data.eligibilityDetailed && data.applicationProcess);
 
   return (
-    <div className="bg-slate-50 flex flex-col min-h-screen">
+    <div key={data.slug} className="bg-slate-50 flex flex-col min-h-screen">
       {/* Premium Hero Section */}
-      <MbbsHero key={data.slug} data={data} />
+      <MbbsHero data={data} />
 
       {/* About Country Section */}
-      <CountryAboutSection key={data.slug} data={data} />
+      <CountryAboutSection data={data} />
 
       {/* Why Choose MBBS Section */}
-      <WhyChooseMbbs key={data.slug} data={data} />
+      <WhyChooseMbbs data={data} />
 
       {/* Top Universities Section */}
-      <TopUniversitiesSection key={data.slug} data={data} />
+      <TopUniversitiesSection data={data} />
 
       {isPremiumCountry ? (
         <>
           {/* Redesigned layout sections */}
-          <EligibilitySection key={data.slug} data={data} />
-          <StudyJourney key={data.slug} data={data} />
-          <ApplicationProcess key={data.slug} data={data} />
-          <ProudAchievers key={data.slug} data={data} />
-          <MbbsFaqSection key={data.slug} data={data} />
+          <EligibilitySection data={data} />
+          <StudyJourney data={data} />
+          <ApplicationProcess data={data} />
+          <ProudAchievers data={data} />
+          <MbbsFaqSection data={data} />
           <ConsultationCTAStrip
             countryName={data.country}
             description={

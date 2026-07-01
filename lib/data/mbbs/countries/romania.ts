@@ -7,227 +7,449 @@ export const romaniaData: MBBSCountry = {
   feeRange: "€5,000 - €8,500 / Year",
   intake: "September/October",
   language: "English / French",
-  description: "Romania is home to some of the oldest and most prestigious medical universities in Eastern Europe. Romanian medical degrees are highly regarded worldwide, offering English-taught medical programs, rigorous clinical training, and an internationally diverse student environment.",
+  description: "Affordable, Globally Recognized Medical Education in the Heart of Europe! Romania offers excellent MBBS programs taught in English, with international accreditation and a vibrant cultural environment. Let EduWire Overseas Education be your reliable partner in securing your future in medicine.",
   keyPoints: [
-    "Direct admission based on 10+2 PCB scores (No entrance exam in most cases)",
-    "Highly affordable living costs compared to Western Europe",
-    "High clinical exposure and modern lab infrastructures",
-    "Degrees accepted throughout the EU/EEA, UK, and USA",
+    "Must have completed 10+2 with Physics, Chemistry, and Biology from a recognized board.",
+    "Minimum 70% marks in PCB or overall aggregate.",
+    "Age must be at least 17 years by 31st December of the admission year.",
+    "NEET qualification is mandatory for Indian students as per NMC guidelines."
   ],
   universities: [
-    "Carol Davila University of Medicine and Pharmacy (Bucharest)",
-    "University of Medicine and Pharmacy of Craiova",
+    "University of Medicine and Pharmacy in Craiova",
     "University of Oradea",
     "Ovidius University of Constanta",
+    "Carol Davila Faculty of Medicine"
   ],
   eligibility: [
-    "Minimum 60% in 12th PCBs (Physics, Chemistry, Biology)",
-    "NEET Qualified status",
-    "English proficiency certificate (or school medium certificate)",
+    "Must have completed 10+2 with Physics, Chemistry, and Biology from a recognized board.",
+    "Minimum 70% marks in PCB or overall aggregate.",
+    "Age must be at least 17 years by 31st December of the admission year."
   ],
-  heroTitle: "Study MBBS in Romania",
-  heroParagraph: "Pursue a six-year European medical degree with English-taught study options, clinical training, and an internationally diverse student environment.",
-  heroBgImage: "/images/universities/Romania-mbbs-hero.png",
+  heroTitle: "Study MBBS in Romania with EduWire",
+  heroParagraph: "Affordable, Globally Recognized Medical Education in the Heart of Europe! Romania offers excellent MBBS programs taught in English, with international accreditation and a vibrant cultural environment. Let EduWire Overseas Education be your reliable partner in securing your future in medicine.",
+  heroBgImage: "/images/mbbs/romania/hero/hero-bg.png",
+  heroCutoutImage: "/images/female-doctor.png",
   flagIcon: "/images/flags/romania.png",
   floatingBadges: [
-    { label: "6-Year", sublabel: "Medical Program", iconName: "Clock" },
-    { label: "EU Degree", sublabel: "Global Validity", iconName: "Award" },
-    { label: "English", sublabel: "Medium taught", iconName: "Languages" }
+    {
+      label: "6-Year",
+      sublabel: "Medical Program",
+      iconName: "Clock"
+    },
+    {
+      label: "EU Degree",
+      sublabel: "Global Validity",
+      iconName: "Award"
+    },
+    {
+      label: "English",
+      sublabel: "Medium taught",
+      iconName: "Languages"
+    }
   ],
   aboutTitle: "About Romania",
-  aboutImage: "/images/universities/Web-Image-Romania.jpg",
+  aboutImage: "/images/mbbs/romania/about/about-img.jpg",
   aboutParagraphs: [
-    "Romania is an EU country in southeastern Europe known for its historic cities, Carpathian landscapes, and growing international student community. Its universities offer medical programs that combine academic study with practical clinical exposure.",
-    "Romania joined the European Union in 2007 and became a full Schengen member in 2025 (with land border integration in progress). Students can experience an affordable European lifestyle compared with many Western European destinations, although actual living costs vary by city and lifestyle.",
-    "English-taught medical programs are available at selected universities. Students should still learn functional Romanian because interaction with local patients during clinical training may require it."
+    "Romania, located in southeastern Europe, is a country with a rich history, stunning landscapes, and a vibrant culture. Romania covers an area of 238,391 km², making it somewhat smaller than the United Kingdom (242,900 km²) or slightly smaller than the U.S. state of Oregon.",
+    "Romania joined NATO in 2004 and the EU in 2007. It is now a Schengen member state. Romania's strategic location along the Black Sea and its commitment to strong transatlantic relations have made it a key partner for both the EU and the United States in the region.",
+    "The Carpathians dominate the central part of Romania, offering breathtaking views, lush forests, and opportunities for outdoor adventures. Romania has a small but picturesque coastline along the Black Sea, providing sandy beaches and a pleasant climate.",
+    "Romania's history has been shaped by various empires, including the Roman, Ottoman, and Austro-Hungarian. These influences are reflected in its architecture, traditions, and cuisine.",
+    "Romania boasts a rich folklore tradition, with colorful costumes, lively dances, and hauntingly beautiful music."
   ],
   aboutHighlights: [
     "EU & Schengen Member",
     "Affordable Living Costs",
     "English-Taught Programs"
   ],
-  whyChooseTitle: "Why Study Medicine in Romania?",
+  whyChooseTitle: "Why Choose MBBS in Romania?",
   whyChooseSubtitle: "Romania combines quality medical education, English-taught programs, and European exposure at competitive tuition rates.",
   whyChoose: [
     {
-      title: "English-Taught Programs",
-      description: "Selected Romanian universities offer six-year Medicine programs in English for international students, eliminating the immediate language barrier.",
-      iconName: "Languages"
-    },
-    {
-      title: "European Medical Education",
-      description: "Students study within the European higher-education environment (ECTS) and receive theoretical and clinical training recognized throughout the EU/EEA.",
+      title: "No Entrance Exam",
+      description: "Admission to MBBS programs in Romania does not require any entrance exam, making the process straightforward and less stressful.",
       iconName: "GraduationCap"
     },
     {
-      title: "Clinical Exposure",
-      description: "Medical programs include extensive practical training through teaching hospitals and clinical departments starting from the third year.",
-      iconName: "Building"
-    },
-    {
-      title: "International Student Community",
-      description: "Romanian medical universities attract thousands of students from multiple countries and cultures, providing a diverse academic environment.",
-      iconName: "Globe"
-    },
-    {
-      title: "Competitive European Costs",
-      description: "Tuition and living costs can be substantially lower than in several Western European destinations, but they vary by university and city.",
+      title: "Affordable Tuition",
+      description: "With fees significantly lower than many other countries, studying MBBS in Romania is economically feasible, costing approximately 6000 EURO per year for tuition.",
       iconName: "Wallet"
     },
     {
-      title: "Accessible Admission Routes",
-      description: "Applications are generally university-specific. Some institutions assess academic records, while others may also require an entrance examination or interview.",
-      iconName: "CheckCircle"
+      title: "English Medium Instruction",
+      description: "The medium of instruction is English, ensuring that language is not a barrier to learning.",
+      iconName: "Languages"
+    },
+    {
+      title: "Global Recognition",
+      description: "Degrees from Romanian medical universities are recognized by the National Medical Commission (NMC) of India and the World Health Organization (WHO), facilitating global career opportunities.",
+      iconName: "Globe"
+    },
+    {
+      title: "Quality Training",
+      description: "Students receive excellent guidance from renowned faculties and gain hands-on experience through internships in affiliated local hospitals.",
+      iconName: "GraduationCap"
     }
   ],
   universitiesDetailed: [
     {
-      name: "Carol Davila University of Medicine and Pharmacy",
+      name: "University of Medicine and Pharmacy in Craiova",
       description: [
-        "Carol Davila University of Medicine and Pharmacy, established in 1857, is one of the oldest and most prestigious medical institutions in Romania. Located in the capital city of Bucharest, it has a long-standing tradition of excellence in medical research and education.",
-        "The university's English-taught Medicine program is highly sought after by international students. It provides comprehensive clinical training in top-tier capital hospitals, preparing graduates for global medical practice."
+        "The University of Medicine and Pharmacy in Craiova (UMF Craiova) is a prestigious medical institution in Romania, renowned for its high-quality education, modern research facilities, and commitment to medical excellence. Established in 1970, the university has built a strong reputation for training skilled healthcare professionals in various medical fields.",
+        "UMF Craiova offers undergraduate and postgraduate programs in Medicine, Dentistry, and Pharmacy, taught by experienced faculty members and supported by state-of-the-art laboratories and clinical training centers. The university is dedicated to innovation, integrating the latest medical advancements into its curriculum, and fostering a dynamic learning environment."
       ],
-      image: "/images/universities/CarolDavilaFaculty.jpeg",
-      badges: ["Public University", "Established 1857", "Medicine & Surgery", "Bucharest, Romania"],
-      fees: [
-        { year: "1st Year", tuitionFee: "€ 10,000", administrativeFee: "-", applicationFee: "-", total: "€ 10,000" },
-        { year: "2nd Year", tuitionFee: "€ 10,000", administrativeFee: "-", applicationFee: "-", total: "€ 10,000" },
-        { year: "3rd Year", tuitionFee: "€ 10,000", administrativeFee: "-", applicationFee: "-", total: "€ 10,000" },
-        { year: "4th Year", tuitionFee: "€ 10,000", administrativeFee: "-", applicationFee: "-", total: "€ 10,000" },
-        { year: "5th Year", tuitionFee: "€ 10,000", administrativeFee: "-", applicationFee: "-", total: "€ 10,000" },
-        { year: "6th Year", tuitionFee: "€ 10,000", administrativeFee: "-", applicationFee: "-", total: "€ 10,000" }
-      ]
-    },
-    {
-      name: "University of Medicine and Pharmacy of Craiova",
-      description: [
-        "The University of Medicine and Pharmacy of Craiova is a modern and dynamic public institution offering high-quality medical education. It features state-of-the-art laboratory facilities and simulation centers to enhance student learning.",
-        "Tuition Note: Tuition fees vary by academic year. Contact Edu-Wire or consult the university’s latest official admission notice."
+      image: "/images/mbbs/romania/universities/uni-1.jpg",
+      badges: [
+        "Public University",
+        "Established 1857",
+        "Medicine & Surgery",
+        "Bucharest, Romania"
       ],
-      image: "/images/universities/universityOfCraiova.jpeg",
-      badges: ["Public University", "Medicine & Surgery", "Craiova, Romania"],
       fees: [
-        { year: "1st Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "2nd Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "3rd Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "4th Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "5th Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "6th Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" }
+        {
+          year: "1st Year",
+          tuitionFee: "€ 8,500",
+          administrativeFee: "€ 3,000",
+          applicationFee: "€ 200",
+          total: "€ 11,700"
+        },
+        {
+          year: "2nd Year",
+          tuitionFee: "€ 8,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 8,500"
+        },
+        {
+          year: "3rd Year",
+          tuitionFee: "€ 8,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 8,500"
+        },
+        {
+          year: "4th Year",
+          tuitionFee: "€ 8,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 8,500"
+        },
+        {
+          year: "5th Year",
+          tuitionFee: "€ 8,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 8,500"
+        },
+        {
+          year: "6th Year",
+          tuitionFee: "€ 8,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 8,500"
+        }
       ]
     },
     {
       name: "University of Oradea",
       description: [
-        "The University of Oradea, situated in northwestern Romania, offers English-taught medical programs designed to meet European standards. The campus provides modern academic buildings and access to student facilities.",
-        "Tuition Note: Tuition fees vary by academic year. Contact Edu-Wire or consult the university’s latest official admission notice."
+        "In 1780, a \"Superior Institution of Philosophical Education\" was founded in Oradea, which became in 1788 The Faculty of Law, the oldest faculty, not only from Romania, but from a vast region of the Eastern European also.",
+        "Since 1921 all courses of the Faculty of Law were held in Romanian language as in 1923, by the foundation of two Theological Academies, the academic life of Oradea received new dimensions. In May 1990, by a decree of the Romanian government, the Technical University was founded following some prestigious academic traditions of Oradea. Later on, the name of the university was changed in University of Oradea."
       ],
-      image: "/images/universities/UniversityOfOradea.jpeg",
-      badges: ["Public University", "Medicine & Surgery", "Oradea, Romania"],
+      image: "/images/mbbs/romania/universities/uni-2.jpg",
+      badges: [
+        "Public University",
+        "Medicine & Surgery",
+        "Craiova, Romania"
+      ],
       fees: [
-        { year: "1st Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "2nd Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "3rd Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "4th Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "5th Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" },
-        { year: "6th Year", tuitionFee: "Varies", administrativeFee: "-", applicationFee: "-", total: "See Note" }
+        {
+          year: "1st Year",
+          tuitionFee: "€ 6,000",
+          administrativeFee: "€ 3,000",
+          applicationFee: "€ 150",
+          total: "€ 9,150"
+        },
+        {
+          year: "2nd Year",
+          tuitionFee: "€ 6,000",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,000"
+        },
+        {
+          year: "3rd Year",
+          tuitionFee: "€ 6,000",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,000"
+        },
+        {
+          year: "4th Year",
+          tuitionFee: "€ 6,000",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,000"
+        },
+        {
+          year: "5th Year",
+          tuitionFee: "€ 6,000",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,000"
+        },
+        {
+          year: "6th Year",
+          tuitionFee: "€ 6,000",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,000"
+        }
       ]
     },
     {
       name: "Ovidius University of Constanta",
       description: [
-        "Ovidius University of Constanta is a major public university located in the coastal city of Constanta on the Black Sea. Its Faculty of Medicine offers English-taught programs that attract a diverse body of international students.",
-        "Students benefit from clinical rotations at the Constanta County Emergency Hospital and have access to modern research centers."
+        "Ovidius University of Constanța (UOC) is the largest European university on the Black Sea coast, offering a diverse range of undergraduate and postgraduate programs.",
+        "Established in 1961, it is known for its strong emphasis on academic excellence, research, and international collaboration. UOC provides courses in medicine, engineering, business, humanities, and sciences, attracting students from over 80 countries. With modern facilities, experienced faculty, and a multicultural environment, the university fosters innovation and professional development. Its prime location in Constanța, Romania, offers students a vibrant cultural and economic hub, making it a top choice for quality higher education in Eastern Europe."
       ],
-      image: "/images/universities/UniversityOfConstanta.jpeg",
-      badges: ["Public University", "Medicine & Surgery", "Constanta, Romania"],
+      image: "/images/mbbs/romania/universities/uni-3.jpg",
+      badges: [
+        "Public University",
+        "Medicine & Surgery",
+        "Oradea, Romania"
+      ],
       fees: [
-        { year: "1st Year", tuitionFee: "€ 7,500", administrativeFee: "-", applicationFee: "-", total: "€ 7,500" },
-        { year: "2nd Year", tuitionFee: "€ 7,500", administrativeFee: "-", applicationFee: "-", total: "€ 7,500" },
-        { year: "3rd Year", tuitionFee: "€ 7,500", administrativeFee: "-", applicationFee: "-", total: "€ 7,500" },
-        { year: "4th Year", tuitionFee: "€ 7,500", administrativeFee: "-", applicationFee: "-", total: "€ 7,500" },
-        { year: "5th Year", tuitionFee: "€ 7,500", administrativeFee: "-", applicationFee: "-", total: "€ 7,500" },
-        { year: "6th Year", tuitionFee: "€ 7,500", administrativeFee: "-", applicationFee: "-", total: "€ 7,500" }
+        {
+          year: "1st Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "€ 3,000",
+          applicationFee: "€ 300",
+          total: "€ 9,800"
+        },
+        {
+          year: "2nd Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        },
+        {
+          year: "3rd Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        },
+        {
+          year: "4th Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        },
+        {
+          year: "5th Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        },
+        {
+          year: "6th Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        }
+      ]
+    },
+    {
+      name: "Carol Davila Faculty of Medicine",
+      description: [
+        "The Carol Davila University of Medicine and Pharmacy, Faculty of Medicine, is one of Romania’s most prestigious medical institutions. Established in 1857, it is named after the renowned physician Carol Davila, who played a key role in modernizing Romanian medical education.",
+        "Located in Bucharest, the faculty offers world-class medical training, cutting-edge research, and clinical experience in top hospitals. With a strong emphasis on innovation and practical learning, it attracts students from around the world. Graduates of Carol Davila are highly regarded in the global medical community, making it a top choice for aspiring doctors."
+      ],
+      image: "/images/mbbs/romania/universities/uni-4.jpg",
+      badges: [
+        "Public University",
+        "Medicine & Surgery",
+        "Constanta, Romania"
+      ],
+      fees: [
+        {
+          year: "1st Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "€ 3,000",
+          applicationFee: "€ 300",
+          total: "€ 9,800"
+        },
+        {
+          year: "2nd Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        },
+        {
+          year: "3rd Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        },
+        {
+          year: "4th Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        },
+        {
+          year: "5th Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        },
+        {
+          year: "6th Year",
+          tuitionFee: "€ 6,500",
+          administrativeFee: "-",
+          applicationFee: "-",
+          total: "€ 6,500"
+        }
       ]
     }
   ],
   eligibilityDetailed: {
     subtitle: "Requirements vary by university and intake. Students must verify the latest requirements with the university and official Romanian authorities.",
     criteria: [
-      "Completed Class 12 or equivalent from a recognized educational board.",
-      "Core subjects must include Physics, Chemistry, and Biology.",
-      "Must be at least 17 years old by December 31st of the admission year.",
-      "Academic marks and specific subject requirements vary by university."
+      "Must have completed 10+2 with Physics, Chemistry, and Biology from a recognized board.",
+      "Minimum 70% marks in PCB or overall aggregate.",
+      "Age must be at least 17 years by 31st December of the admission year.",
+      "NEET qualification is mandatory for Indian students as per NMC guidelines."
     ],
     entranceTest: {
       title: "Admission Assessment",
       description: "Romania does not have a single national medical entrance test for all international applicants. Universities use their own procedures, which may involve academic-file evaluation, Biology/Chemistry testing, an online examination, or an interview."
     },
     documents: [
-      "Class 10 certificate and marksheet.",
-      "Class 12 certificate and marksheet.",
-      "Valid international passport.",
-      "Birth certificate (with official translation if required).",
-      "NEET scorecard (for Indian applicants planning to practice in India).",
-      "Passport-sized photographs (meeting official visa specifications).",
-      "Medical fitness certificate.",
-      "Proof of English language proficiency (certificate or university assessment).",
-      "Certified translations, legalization, or apostille where required."
+      "10th & 12th Mark Sheets (original + photocopies)",
+      "Valid Passport",
+      "Passport-size photographs (white background)",
+      "Birth Certificate (in English or translated)",
+      "Medical Fitness Certificate",
+      "Police Clearance Certificate",
+      "COVID‑19 Vaccination Certificate",
+      "Admission Letter & Visa (provided post-application)"
     ]
   },
   applicationProcess: {
     timelineDisclaimer: "Timelines and requirements vary by university, intake, and official Romanian authority. Begin the process early and verify all current deadlines.",
     steps: [
       {
-        title: "University Shortlisting",
+        title: "University Shortlisting & Application Process",
         shortDesc: "Compare accredited universities offering Medicine in English.",
         detailedContent: [
           {
-            title: "Choosing Your University",
+            title: "A. Shortlisting Universities & Courses",
             items: [
-              "Compare course fees, language requirements, location, and clinical rotation structures.",
-              "Check whether the target university utilizes file evaluation, entrance tests, or interviews."
+              "Research universities recognized by WHO, NMC, and ECFMG (e.g., Carol Davila, Iuliu Hațieganu, Grigore T. Popa).",
+              "English medium programs require IELTS/TOEFL or medium-of-instruction certificate."
             ]
+          },
+          {
+            title: "B. University Application",
+            items: [
+              "Class 10/12 mark sheets + passing certificates",
+              "NEET scorecard (for Indians)",
+              "Passport copy",
+              "Birth certificate",
+              "Medical certificate (HIV/hepatitis-free)",
+              "Motivation letter (if required)"
+            ]
+          },
+          {
+            title: "C. Entrance Exam / Interview",
+            items: [
+              "No centralized exam like IMAT (Romania has direct admission)."
+            ]
+          },
+          {
+            title: "D. Admission Results",
+            items: []
           }
         ]
       },
       {
-        title: "University Application",
+        title: "Pre-Enrolment & Enrollment Fee Payment",
         shortDesc: "Submit applications and academic files directly to the university.",
         detailedContent: [
           {
-            title: "File Compilation & Submission",
+            title: "A. Pre-Enrolment on Universitaly",
             items: [
-              "Apply through the university's official admission process or approved channel.",
-              "Submit academic records, passport, translations, and legalised/apostilled documents.",
-              "Attend an entrance test or interview if required by your chosen institution."
+              "All non-EU students must pre-enroll through Universitaly.it.",
+              "This is a mandatory step for initiating the student visa process through the Romanian Embassy or Consulate in your country.",
+              "Ensure your personal and academic details match your official documents to avoid delays or rejections."
+            ]
+          },
+          {
+            title: "B. Fee Payment for Some Universities",
+            items: [
+              "Some universities request students to pay the first installment of tuition fees during the enrollment phase.",
+              "These payments confirm your intent to join and are often required to activate your admission. Payment receipts are essential for your visa application and university onboarding procedures."
             ]
           }
         ]
       },
       {
-        title: "Admission & Letter of Acceptance",
+        title: "Scholarship & Documentation Process",
         shortDesc: "Receive decisions and obtain official Ministry approval.",
         detailedContent: [
           {
-            title: "Acceptance Letter & Deposit",
+            title: "A. Scholarship Online Applications",
             items: [
-              "Obtain your conditional or final admission decision from the university.",
-              "The university processes document recognition and requests the Romanian Ministry of Education to issue the official Letter of Acceptance.",
-              "Pay the required tuition deposit or first-year fee according to official university guidelines and retain receipts."
+              "Regional Scholarships (e.g. LazioDisco, DSU, EDISU, ERGO, etc.) – Most popular among Indian students",
+              "Invest Your Talent in Romania – For selected Master’s programs",
+              "University-specific scholarships – Offered directly by universities"
+            ]
+          },
+          {
+            title: "B. Documentation Preparation",
+            items: [
+              "For regional scholarships, students must follow a 3-step document preparation process:",
+              "Legalize your family income and financial documents in English (as per Indian standards) Translate these legalized documents into Romanian",
+              "Legalize the Italian-translated versions (if required by the scholarship authority)"
             ]
           }
         ]
       },
       {
-        title: "Romanian Student Visa",
+        title: "Visa Application & Documentation",
         shortDesc: "Apply for a long-stay visa (category D/SD) for studies.",
         detailedContent: [
           {
-            title: "Consular Application",
+            title: "Step 01: Track Visa Appointments Actively",
             items: [
-              "Apply for a Romanian long-stay study visa (category D/SD) through the official online portal.",
-              "Submit the Ministry Letter of Acceptance, proof of tuition payment, financial means, accommodation details, and travel medical insurance.",
-              "Attend your consular appointment. Check exact requirements with the Romanian Ministry of Foreign Affairs."
+              "Schedule at Romanian Embassy/VFS Global. Slots fill quickly!"
+            ]
+          },
+          {
+            title: "Step 02: Prepare DOV/CIMEA Certification",
+            items: [
+              "Admission letter + fee payment receipt.",
+              "Apostilled academic documents",
+              "Passport (valid for 2+ years)",
+              "Travel insurance (€30,000 coverage)",
+              "Proof of funds (~€2,000–€3,000 in bank)",
+              "o Accommodation proof (university dorm/hotel booking)"
+            ]
+          },
+          {
+            title: "Step 03: Visa Documentation & Final Submission",
+            items: [
+              "Processing time: 15–30 days.",
+              "D-Type long-stay visa issued for studies."
             ]
           }
         ]
@@ -237,80 +459,135 @@ export const romaniaData: MBBSCountry = {
         shortDesc: "Book travel and gather original academic credentials.",
         detailedContent: [
           {
-            title: "Travel Readiness",
+            title: "A. Flight Booking & Travel Readiness",
             items: [
-              "Book flight tickets only after your study visa has been officially approved and stamped.",
-              "Gather all original documents, certified translations, and multiple physical photocopies.",
-              "Pack suitable clothing for Romanian seasons, essential prescription medicines, and power adapters."
+              "Book flights after visa approval.",
+              "Arrange dormitory/hostel via university or private rentals.",
+              "Choose a travel date that gives you time to settle before classes"
+            ]
+          },
+          {
+            title: "B. Activate International Roaming Pack (IMPORTANT)",
+            items: [
+              "Activate a 1-week international roaming pack before you fly",
+              "Stay connected during travel & after arrival",
+              "Useful if SIM info-card purchase is delayed",
+              "Stay in touch with EDU-WIRE, family, and friends easily"
+            ]
+          },
+          {
+            title: "C. Luggage & Essentials Checklist",
+            items: [
+              "Prescribed medicines + doctor’s note",
+              "EUR cash (~€500) + debit/forex card",
+              "Laptop, adapters (Romania uses Type F plugs, 230V).",
+              "Visa & travel insurance",
+              "Accommodation confirmation",
+              "Flight itinerary & offer letter"
+            ]
+          },
+          {
+            title: "D. Airport Pickup & Transit Planning",
+            items: [
+              "Major airports: Bucharest (OTP), Cluj-Napoca (CLJ).",
+              "Pre-book pickup or use public transport (metro/bus)."
             ]
           }
         ]
       },
       {
-        title: "Arrival & Residence Formalities",
+        title: "Upon Arrival in Romania: Post-Arrival Formalities & Enrollment",
         shortDesc: "Enroll physically and apply for your IGI residence permit.",
         detailedContent: [
           {
-            title: "Local Formalities in Romania",
+            title: "A. Apply for Codice Fiscale (Tax Code)",
             items: [
-              "Complete physical university enrollment and submit original academic credentials as requested.",
-              "Apply for a Romanian temporary residence permit for studies through the General Inspectorate for Immigration (IGI) within the required timeline.",
-              "Register your local accommodation, secure a Romanian SIM card, and open a bank account."
+              "Opening a bank account",
+              "Signing a rental contract",
+              "Applying for a residence permit"
+            ]
+          },
+          {
+            title: "B. Permesso di Soggiorno (Residence Permit)",
+            items: [
+              "Visa + passport",
+              "University enrollment proof",
+              "health insurance",
+              "Proof of address (rental contract/dorm letter)"
+            ]
+          },
+          {
+            title: "C. University Physical Enrollment (if required)",
+            items: [
+              "Original academic documents",
+              "Codice Fiscale",
+              "Residence permit receipt"
+            ]
+          },
+          {
+            title: "D. Orientation & Daily Life Setup",
+            items: [
+              "Buy & activate Romanian SIM",
+              "Apply for transport pass",
+              "Explore your neighborhood",
+              "Use student discounts, try mensa, join student groups"
+            ]
+          },
+          {
+            title: "E. Open an Romanian Bank Account",
+            items: [
+              "Receiving scholarships",
+              "Paying rent and expenses",
+              "Financial stability in Romania"
             ]
           }
         ]
       }
     ]
   },
-
+  achievers: [],
   faqs: [
     {
-      question: "Is medicine in Romania taught in English?",
-      answer: "Yes, selected Romanian medical universities offer full six-year Medicine programs taught entirely in English for international students. Admission criteria differ by university."
+      question: "Is MBBS in Romania taught in English?+",
+      answer: "Yes, many Romanian universities offer MBBS programs in English for international students, making it accessible without knowing the local language."
     },
     {
-      question: "What is the duration of the medical program in Romania?",
-      answer: "The Medicine program has a duration of 6 years, which includes comprehensive theoretical study, lab work, and practical clinical clerkships in teaching hospitals."
+      question: "What is the duration of the MBBS program in Romania?+",
+      answer: "The MBBS program in Romania typically lasts 6 years, which includes pre-clinical, clinical, and internship training."
     },
     {
-      question: "Is NEET required for Indian students?",
-      answer: "Yes, Indian students planning to return and practice in India must qualify the NEET exam to remain compliant with the National Medical Commission (NMC) regulations."
+      question: "Is NEET required for Indian students to study MBBS in Romania?+",
+      answer: "Yes, Indian students must qualify the NEET exam to be eligible for admission to MBBS programs in Romania."
     },
     {
-      question: "Is there a common entrance exam for all Romanian medical universities?",
-      answer: "No. Romania does not use a single centralized entrance exam for international students. Each university establishes its own admission criteria, which can include file review, interviews, or chemistry/biology tests."
+      question: "Are Romanian medical degrees recognized globally?+",
+      answer: "Yes, Romanian medical universities are recognized by global bodies such as WHO, ECFMG, MCI (NMC), and listed in the World Directory of Medical Schools."
     },
     {
-      question: "Do I need IELTS or TOEFL?",
-      answer: "Not universally. Some universities accept certificate proof that your prior secondary education was in English, while others require official language tests or conduct their own evaluations."
+      question: "What are the tuition fees for MBBS in Romania?+",
+      answer: "Tuition fees for MBBS in Romania typically range from €4,000 to €7,500 per year, depending on the university."
     },
     {
-      question: "Do students need to learn Romanian?",
-      answer: "Yes. While classes are conducted in English, learning basic Romanian is highly recommended and taught during the curriculum. You must speak basic Romanian during clinical rotations starting in the third year to interact with local patients."
+      question: "Are scholarships available for MBBS students in Romania?+",
+      answer: "Scholarships are limited for MBBS in Romania, but some universities and government programs may offer partial financial support to deserving international students."
     },
     {
-      question: "How much does studying medicine in Romania cost?",
-      answer: "Tuition fees vary by university and academic year. For example, Carol Davila is €10,000/year and Ovidius is €7,500/year. Students should verify current fees from the university's latest official admission notice."
+      question: "What are the admission requirements for MBBS in Romania?+",
+      answer: "Students need to have completed 10+2 with Physics, Chemistry, and Biology, a valid passport, and NEET qualification (for Indian students). Some universities may conduct an interview or entrance exam."
     },
     {
-      question: "Are Romanian medical degrees valid in India?",
-      answer: "A foreign medical degree does not automatically grant the right to practice in India. Graduates must satisfy the applicable NMC foreign registration requirements, including passing the licensing exam (FMG / NExT)."
+      question: "Do I need to learn Romanian for clinical practice?+",
+      answer: "Although the MBBS course is in English, learning basic Romanian is necessary for interacting with patients during clinical rotations in hospitals."
     },
     {
-      question: "What visa is required?",
-      answer: "Non-EU students require a Romanian long-stay study visa (category D/SD) before departure, followed by applying for a temporary residence permit through the IGI after arrival."
+      question: "What is the visa process for studying MBBS in Romania?+",
+      answer: "After receiving an admission letter, you must apply for a student visa (long-stay visa - type D) by submitting academic, financial, and accommodation-related documents."
     },
     {
-      question: "Can international students work while studying?",
-      answer: "Work rights are subject to Romanian immigration laws. Because medicine is highly demanding, students are strongly advised not to rely on part-time work to cover tuition fees or essential living costs."
-    },
-    {
-      question: "Are scholarships guaranteed?",
-      answer: "No. Scholarship programs are highly competitive, limited in availability, and subject to eligibility criteria, nationality requirements, and regional calls."
-    },
-    {
-      question: "When should students begin applying?",
-      answer: "Students are advised to start applying several months before the intake. File recognition, Ministry Letter of Acceptance issuance, and visa processing can take significant time."
+      question: "Can I work part-time while studying MBBS in Romania?+",
+      answer: "Yes, international students in Romania can work part-time up to 20 hours per week, but managing work with a demanding medical curriculum may be challenging."
     }
-  ]
+  ],
+  seoTitle: undefined,
+  seoDescription: undefined
 };

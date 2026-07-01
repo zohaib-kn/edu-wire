@@ -1,0 +1,92 @@
+[
+  {
+    "country": "Italy",
+    "originalUrl": "https://edu-wire.com/mbbs-in-italy.php",
+    "newRoute": "/mbbs/italy",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  },
+  {
+    "country": "Romania",
+    "originalUrl": "https://edu-wire.com/mbbs-in-romania.php",
+    "newRoute": "/mbbs/romania",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  },
+  {
+    "country": "Bulgaria",
+    "originalUrl": "https://edu-wire.com/mbbs-in-bulgaria.php",
+    "newRoute": "/mbbs/bulgaria",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  },
+  {
+    "country": "Russia",
+    "originalUrl": "https://edu-wire.com/mbbs-in-russia.php",
+    "newRoute": "/mbbs/russia",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  },
+  {
+    "country": "Georgia",
+    "originalUrl": "https://edu-wire.com/mbbs-in-georgia.php",
+    "newRoute": "/mbbs/georgia",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  },
+  {
+    "country": "Kazakhstan",
+    "originalUrl": "https://edu-wire.com/mbbs-in-kazakhstan.php",
+    "newRoute": "/mbbs/kazakhstan",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  },
+  {
+    "country": "Kyrgyzstan",
+    "originalUrl": "https://edu-wire.com/mbbs-in-kyrgyzstan.php",
+    "newRoute": "/mbbs/kyrgyzstan",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  },
+  {
+    "country": "Poland",
+    "originalUrl": "https://edu-wire.com/mbbs-in-poland.php",
+    "newRoute": "/mbbs/poland",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  },
+  {
+    "country": "Hungary",
+    "originalUrl": "https://edu-wire.com/mbbs-in-hungary.php",
+    "newRoute": "/mbbs/hungary",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  },
+  {
+    "country": "Serbia",
+    "originalUrl": "https://edu-wire.com/mbbs-in-serbia.php",
+    "newRoute": "/mbbs/serbia",
+    "status": "PASS",
+    "maxPriority": "Minor",
+    "differences": [],
+    "imageIssues": []
+  }
+]

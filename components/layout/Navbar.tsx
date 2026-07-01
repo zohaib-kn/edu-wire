@@ -7,32 +7,12 @@ import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/data/site";
 import { useModal } from "@/components/context/ModalContext";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
+interface NavChild {
+  name: string;
+  href: string;
+  flag?: string;
+}
 
-// Helper to get country flag emojis for MBBS and Destinations menus
-const getCountryEmoji = (name: string): string => {
-  const flags: Record<string, string> = {
-    "Italy": "🇮🇹",
-    "Romania": "🇷🇴",
-    "Bulgaria": "🇧🇬",
-    "Russia": "🇷🇺",
-    "Georgia": "🇬🇪",
-    "Kazakhstan": "🇰🇿",
-    "Kyrgyzstan": "🇰🇬",
-    "Poland": "🇵🇱",
-    "Hungary": "🇭🇺",
-    "Serbia": "🇷🇸",
-    "UK": "🇬🇧",
-    "Australia": "🇦🇺",
-    "USA": "🇺🇸",
-    "Canada": "🇨🇦",
-    "Germany": "🇩🇪",
-    "Ireland": "🇮🇪",
-    "New Zealand": "🇳🇿",
-    "France": "🇫🇷",
-    "Spain": "🇪🇸",
-  };
-  return flags[name] || "";
-};
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -131,18 +111,18 @@ export default function Navbar() {
 
                 if (item.children) {
                   const isLargeDropdown = item.children.length > 5;
-                  const hasParentLink = !!item.href;
+                  const isNavigatable = item.name === "Study Destinations";
                   return (
                     <div
                       key={item.name}
                       className="relative"
                       onMouseLeave={closeOnHover}
                     >
-                      {/* Split: label navigates, chevron toggles dropdown */}
-                      <div className="flex items-center">
-                        {hasParentLink ? (
+                      {isNavigatable ? (
+                        <div className="flex items-center">
                           <Link
                             href={item.href!}
+                            onMouseEnter={() => openOnHover(item.name)}
                             className={`relative flex items-center px-3 py-2 text-[15px] font-medium transition-all duration-200 outline-none select-none whitespace-nowrap ${
                               isActiveParent
                                 ? "text-[#0D6493]"
@@ -156,32 +136,49 @@ export default function Navbar() {
                               )}
                             </span>
                           </Link>
-                        ) : (
-                          <span
-                            className={`relative px-3 py-2 text-[15px] font-medium select-none whitespace-nowrap ${
-                              isActiveParent ? "text-[#0D6493]" : "text-slate-700"
+                          <button
+                            onMouseEnter={() => openOnHover(item.name)}
+                            onClick={() => toggleDropdown(item.name)}
+                            className={`flex items-center px-1 py-2 transition-all duration-200 outline-none ${
+                              isActiveParent ? "text-[#0D6493]" : "text-slate-400 hover:text-[#0D6493]"
                             }`}
+                            aria-expanded={activeDropdown === item.name}
+                            aria-haspopup="true"
+                            aria-label={`Toggle ${item.name} menu`}
                           >
-                            {item.name}
-                          </span>
-                        )}
+                            <ChevronDown
+                              className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                                activeDropdown === item.name ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                        </div>
+                      ) : (
                         <button
                           onMouseEnter={() => openOnHover(item.name)}
                           onClick={() => toggleDropdown(item.name)}
-                          className={`flex items-center px-1 py-2 transition-all duration-200 outline-none ${
-                            isActiveParent ? "text-[#0D6493]" : "text-slate-400 hover:text-[#0D6493]"
+                          className={`group flex items-center px-3 py-2 text-[15px] font-medium transition-all duration-200 outline-none select-none whitespace-nowrap ${
+                            isActiveParent
+                              ? "text-[#0D6493]"
+                              : "text-slate-700 hover:text-[#0D6493]"
                           }`}
                           aria-expanded={activeDropdown === item.name}
                           aria-haspopup="true"
                           aria-label={`Toggle ${item.name} menu`}
                         >
+                          <span className="relative mr-1.5">
+                            {item.name}
+                            {isActiveParent && (
+                              <span className="absolute -bottom-[3px] left-0 right-0 h-[2px] bg-[#0D6493] rounded-full" />
+                            )}
+                          </span>
                           <ChevronDown
                             className={`h-3.5 w-3.5 transition-transform duration-300 ${
                               activeDropdown === item.name ? "rotate-180" : ""
                             }`}
                           />
                         </button>
-                      </div>
+                      )}
 
                       {/* Dropdown Menu */}
                       <div
@@ -206,7 +203,7 @@ export default function Navbar() {
                         >
                           {item.children.map((subItem) => {
                             const isActiveChild = pathname === subItem.href;
-                            const flagEmoji = getCountryEmoji(subItem.name);
+                            const flagPath = (subItem as NavChild).flag;
                             return (
                               <Link
                                 key={subItem.name}
@@ -218,10 +215,14 @@ export default function Navbar() {
                                     : "text-slate-600 hover:bg-slate-50 hover:text-[#0D6493]"
                                 }`}
                               >
-                                {flagEmoji && (
-                                  <span className="mr-2 text-sm shrink-0 select-none">
-                                    {flagEmoji}
-                                  </span>
+                                {flagPath && (
+                                  <Image
+                                    src={flagPath}
+                                    alt=""
+                                    width={24}
+                                    height={18}
+                                    className="mr-2.5 w-6 h-[18px] object-cover rounded-[3px] border border-slate-200/50 shrink-0 select-none"
+                                  />
                                 )}
                                 <span>{subItem.name}</span>
                               </Link>
@@ -333,16 +334,15 @@ export default function Navbar() {
                   ? pathname === "/"
                   : pathname.startsWith(item.href ?? "");
               const isLargeDropdown = item.children.length > 5;
-              const hasParentLink = !!item.href;
+              const isNavigatable = item.name === "Study Destinations";
               return (
                 <div key={item.name} className="py-0.5">
-                  {/* Split row: label Link + chevron button */}
-                  <div
-                    className={`flex items-center rounded-xl transition-colors ${
-                      isActiveParent ? "bg-[#0D6493]/5" : "hover:bg-slate-50"
-                    }`}
-                  >
-                    {hasParentLink ? (
+                  {isNavigatable ? (
+                    <div
+                      className={`flex items-center rounded-xl transition-colors ${
+                        isActiveParent ? "bg-[#0D6493]/5" : "hover:bg-slate-50"
+                      }`}
+                    >
                       <Link
                         href={item.href!}
                         className={`flex-1 px-3.5 py-3 text-base font-bold transition-colors ${
@@ -351,28 +351,40 @@ export default function Navbar() {
                       >
                         {item.name}
                       </Link>
-                    ) : (
-                      <span
-                        className={`flex-1 px-3.5 py-3 text-base font-bold ${
-                          isActiveParent ? "text-[#0D6493]" : "text-slate-700"
-                        }`}
+                      <button
+                        onClick={() => toggleDropdown(item.name)}
+                        aria-expanded={activeDropdown === item.name}
+                        aria-label={`Toggle ${item.name} submenu`}
+                        className="flex items-center justify-center w-12 h-12 shrink-0 text-slate-400 transition-colors hover:text-[#0D6493] focus:outline-none"
                       >
-                        {item.name}
-                      </span>
-                    )}
+                        <ChevronDown
+                          className={`h-5 w-5 transition-transform duration-200 ${
+                            activeDropdown === item.name ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    </div>
+                  ) : (
                     <button
                       onClick={() => toggleDropdown(item.name)}
                       aria-expanded={activeDropdown === item.name}
                       aria-label={`Toggle ${item.name} submenu`}
-                      className="flex items-center justify-center w-12 h-12 shrink-0 text-slate-400 transition-colors hover:text-[#0D6493] focus:outline-none"
+                      className={`w-full flex items-center justify-between rounded-xl px-3.5 py-3 text-left transition-colors focus:outline-none ${
+                        isActiveParent 
+                          ? "bg-[#0D6493]/5 text-[#0D6493]" 
+                          : "text-slate-700 hover:bg-slate-50 hover:text-[#0D6493]"
+                      }`}
                     >
+                      <span className="text-base font-bold">
+                        {item.name}
+                      </span>
                       <ChevronDown
-                        className={`h-5 w-5 transition-transform duration-200 ${
+                        className={`h-5 w-5 text-slate-400 transition-transform duration-200 ${
                           activeDropdown === item.name ? "rotate-180" : ""
                         }`}
                       />
                     </button>
-                  </div>
+                  )}
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
                       activeDropdown === item.name
@@ -389,19 +401,27 @@ export default function Navbar() {
                     >
                       {item.children.map((subItem) => {
                         const isSubActive = pathname === subItem.href;
-                        const subFlag = getCountryEmoji(subItem.name);
+                        const flagPath = (subItem as NavChild).flag;
                         return (
                           <Link
                             key={subItem.name}
                             href={subItem.href}
-                            className={`block rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
+                            className={`flex items-center rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
                               isSubActive
                                 ? "text-[#0D6493] bg-[#0D6493]/5"
                                 : "text-slate-600 hover:bg-slate-50 hover:text-[#0D6493]"
                             }`}
                           >
-                            {subFlag && <span className="mr-2 text-base">{subFlag}</span>}
-                            {subItem.name}
+                            {flagPath && (
+                              <Image
+                                src={flagPath}
+                                alt=""
+                                width={24}
+                                height={18}
+                                className="mr-2.5 w-6 h-[18px] object-cover rounded-[3px] border border-slate-200/50 shrink-0 select-none"
+                              />
+                            )}
+                            <span>{subItem.name}</span>
                           </Link>
                         );
                       })}

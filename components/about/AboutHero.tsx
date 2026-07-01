@@ -18,14 +18,14 @@ export default function AboutHero() {
   };
 
   return (
-    <section className="relative pt-24 pb-20 overflow-hidden bg-gradient-to-b from-[#E1EDF8]/20 via-white to-white select-none">
+    <section className="relative pt-8 pb-16 overflow-hidden bg-gradient-to-b from-[#E1EDF8]/20 via-white to-white select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         
         {/* 12-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Content */}
-          <div className="lg:col-span-7 space-y-8 text-left">
+          <div className="lg:col-span-7 space-y-6 text-left">
             
             {/* Eyebrow */}
             <div>
@@ -71,7 +71,7 @@ export default function AboutHero() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="pt-8 border-t border-slate-100 grid grid-cols-3 gap-6 max-w-lg">
+            <div className="pt-6 border-t border-slate-100 grid grid-cols-3 gap-6 max-w-lg">
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-2xl font-extrabold text-[#0D6493]">
                   <Award className="h-5 w-5 text-[#f4a261] shrink-0" />
@@ -107,20 +107,20 @@ export default function AboutHero() {
 
           {/* Right Column: Circular Frame Visual */}
           <div className="lg:col-span-5 flex items-center justify-center">
-            <div className="relative w-full max-w-[380px] h-[400px] lg:h-[460px] flex items-center justify-center">
+            <div className="relative w-full max-w-[380px] h-[380px] lg:h-[420px] flex items-center justify-center">
               
               {/* Circular Background Frame */}
               <div className="absolute w-[290px] h-[290px] sm:w-[340px] sm:h-[340px] rounded-full bg-gradient-to-br from-[#0D6493]/10 to-[#E1EDF8]/40 border border-[#0D6493]/20 shadow-sm" />
               <div className="absolute w-[260px] h-[260px] sm:w-[305px] sm:h-[305px] rounded-full border border-dashed border-[#0D6493]/30" />
               
               {/* Cutout Image */}
-              <div className="relative w-[280px] h-[380px] sm:w-[320px] h-[420px] z-10 select-none">
+              <div className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[400px] z-10 select-none">
                 <Image
                   src="/images/About-Us.png"
                   alt="About Edu-Wire consultants"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-contain object-bottom scale-100 origin-bottom"
+                  className="object-contain object-bottom"
                   priority={true}
                   unoptimized={true}
                 />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 import { siteConfig } from "@/lib/data/site";
 import ContactForm from "@/components/contact/ContactForm";
 
@@ -38,11 +39,23 @@ export default function ContactPage() {
           {/* Right: Contact Information Cards / Quick Contact Panel */}
           <div className="lg:col-span-5 flex flex-col gap-6 h-full justify-between">
             {/* Introductory Card */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm flex-grow flex flex-col justify-center">
-              <h2 className="text-xl font-bold text-slate-900 mb-2">Connect Instantly</h2>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Have questions about courses, university applications, or visas? Reach out to our counsellors directly via phone or email for immediate assistance.
-              </p>
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm flex-grow flex flex-col justify-between gap-6">
+              <div>
+                <h2 className="text-xl font-bold text-slate-900 mb-2">Connect Instantly</h2>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Have questions about courses, university applications, or visas? Reach out to our counsellors directly via phone or email for immediate assistance.
+                </p>
+              </div>
+              <div className="relative w-full aspect-[1.5] rounded-2xl overflow-hidden border border-slate-100/80 bg-slate-50">
+                <Image
+                  src="/images/contact-instantly.jpg"
+                  alt="Connect Instantly"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Phone Card */}
