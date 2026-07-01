@@ -107,14 +107,25 @@ export default function DestinationUniversities({ universities, note, countryNam
                   }`}
                 >
                   {/* Name and Ranking */}
-                  <div className="space-y-3">
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight">
-                      {uni.name}
-                    </h3>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-500/10 text-amber-600 text-xs font-bold border border-amber-500/20">
-                      <Award className="h-4.5 w-4.5" />
-                      <span>{uni.ranking}</span>
+                  <div className="flex items-start gap-4 justify-between">
+                    <div className="space-y-3 flex-grow">
+                      <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight">
+                        {uni.name}
+                      </h3>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-500/10 text-amber-600 text-xs font-bold border border-amber-500/20">
+                        <Award className="h-4.5 w-4.5" />
+                        <span>{uni.ranking}</span>
+                      </div>
                     </div>
+                    {uni.logo && (
+                      <div className="flex-shrink-0 h-11 w-11 sm:h-14 sm:w-14 rounded-xl border border-slate-200 bg-white p-1.5 flex items-center justify-center shadow-sm">
+                        <img
+                          src={uni.logo}
+                          alt={uni.logoAlt || `${uni.name} logo`}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                    )}
                   </div>
 
                   {/* Course Table */}
