@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ConsultationModal from "@/components/ui/ConsultationModal";
 import FloatingHelpdesk from "@/components/ui/FloatingHelpdesk";
+import AutoOpenConsultationModal from "@/components/ui/AutoOpenConsultationModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
           <Footer />
           <ConsultationModal />
           <FloatingHelpdesk />
+          <AutoOpenConsultationModal />
         </ModalProvider>
       </body>
     </html>

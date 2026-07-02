@@ -346,14 +346,6 @@ export default function Footer() {
             <span className="text-slate-400 font-medium">{siteConfig.name} Consultancy.</span>{" "}
             All rights reserved.
           </p>
-          <p className="flex items-center gap-2">
-            <span>Built with</span>
-            <span className="text-slate-300 font-medium">Next.js</span>
-            <span className="text-slate-600">·</span>
-            <span className="text-slate-300 font-medium">Tailwind CSS</span>
-            <span className="text-slate-600">·</span>
-            <span className="text-slate-400">Made with care in India 🇮🇳</span>
-          </p>
         </div>
       </div>
 
